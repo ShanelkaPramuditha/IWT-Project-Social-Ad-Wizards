@@ -1,7 +1,9 @@
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
+/* Login form open & close function */
+function openLoginForm() {
+  document.getElementById("loginForm").style.display = "block";
 }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+function closeLoginForm() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }

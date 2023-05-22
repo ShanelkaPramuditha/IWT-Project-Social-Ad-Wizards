@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <!-- Title of the page -->
     <title>Social Ad Wizards</title>
+    <!-- JavaScript Script Files -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/login.js"></script>
 </head>
 
 <body>
+<div class="overlay" id="overlay" onclick="closeLoginForm()"></div>
+
+<!-- Header Panel of the site -->
 <header>
+    <div class="header">Social Ad Wizards</div>
     <div class="container">
+        <!-- Logo Image -->
         <img src="assets/images/site-img/logo.png" alt="LOGO" class="logo">
+        <!-- Navigation Panel Buttons -->
         <nav class="navbar">
             <ul>
                 <li><a href="index.php" class="active">Home</a></li>
@@ -20,15 +30,16 @@
                 <li><a href="services.php">Services</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <input type="text" placeholder="Search.." class="search">
             </ul>
         </nav>
-
-            <img src="assets/images/site-img/login.png" alt="LOGIN" onclick="openForm()" class="login">
-
+        <!-- Login image -->
+        <img src="assets/images/site-img/login.png" alt="LOGIN" onclick="openLoginForm()" class="login">
     </div>
 </header>
 
-<div class="form-popup" id="myForm">
+<!-- Login Pop UP FORM -->
+<div class="form-popup" id="loginForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
 
@@ -39,20 +50,8 @@
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
   </form>
 </div>
-
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
-
-<script src="assets/js/header.js"></script>
 </body>
 </html>
