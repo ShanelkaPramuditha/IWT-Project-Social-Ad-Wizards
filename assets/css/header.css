@@ -1,23 +1,34 @@
+.header {
+    font-size: 50px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 header {
+    position: fixed;
     background-color: rgb(152, 147, 147);
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
+    left: 0;
+    top: 0;
     width: 100%
   }
   
-  header::after {
+header::after {
     content: '';
     display: table;
     clear: both;
   }
   
   .logo {
+    display: inline;
     float: left;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
   }
+
   .navbar {
-    float: right;
+    display: inline;
   }
   
   .navbar ul {
@@ -28,7 +39,7 @@ header {
   
   .navbar ul li {
     display: inline-block;
-    margin: 130px 10px 0 0;
+    margin: 80px 10px 0 0;
   }
   
   .navbar ul li a {
@@ -44,7 +55,17 @@ header {
   }
 
   .login {
-    float: right;
-    height: 120px;
-    width: 120px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .search {
+    float: none;
+    display: inline-end;
+    text-align: left;
+    margin: 0;
+    padding: 6px;
   }
