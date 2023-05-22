@@ -1,0 +1,50 @@
+header {
+    background-color: rgb(152, 147, 147);
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    width: 100%
+  }
+  
+  header::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .logo {
+    float: left;
+    height: 150px;
+    width: 150px;
+  }
+  .navbar {
+    float: right;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar ul li {
+    display: inline-block;
+    margin: 130px 10px 0 0;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 0;
+    border: none;
+  }
+  
+  .navbar ul li a.active {
+    background-color: #ff0000;
+    color: #fff;
+  }
+
+  .login {
+    float: right;
+    height: 120px;
+    width: 120px;
+  }

@@ -1,0 +1,21 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+	<title>New Project</title>
+	<defs>
+		<image  width="1080" height="1080" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4AQMAAADW3v7MAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAClSURBVHic7cExAQAAAMKg9U9tCU+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgaPd4AATqdxpIAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 200px;fill: #000000;font-weight: 400;font-family: "DejaVuSerifCondensed", "DejaVu Serif Condensed" } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+	<text id="SOCIAL AD WIZARDS" style="transform: matrix(1,0,0,1,-2,17)" >
+		<tspan x="9.8" y="152" class="t0">SOCIAL AD </tspan>
+		<tspan x="83" y="392" class="t0">WIZARDS</tspan><tspan  y="392" class="t0">
+</tspan>
+	</text>
+	<text id="SOCIAL AD WIZARDS copy" style="transform: matrix(1,0,0,1,-2,671)" >
+		<tspan x="9.8" y="152" class="t0">SOCIAL AD </tspan>
+		<tspan x="83" y="392" class="t0">WIZARDS</tspan><tspan  y="392" class="t0">
+</tspan>
+	</text>
+</svg>
