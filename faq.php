@@ -12,21 +12,22 @@
     <!-- open Navigation bar with PHP -->
     <?php include 'header.php' ?>
 
-<div class=controler">
+<div class="controler">
 
 <h1>test</h1></br>
 <h1>test</h1></br>
     <h1>FAQ</h1>
-	
-<form method="POST" action="#">
-Question :
-<input type ="text" placeholder="  Ask your Question...." size="1000">
+<div class="al">	
+<form method="POST" action="#" class="i">
+<center>Question :
+<input type ="text" placeholder="  Ask your Question...." size="100"></center>
 <br>
 <br>
+<center><input type="submit" class ="button"value="SEND"></center>
 
-<button class="button">Submit</button>
 
 </form>
+    </div>
 </div>
     <!-- Footer bar with PHP -->
     <?php include 'footer.php' ?>
