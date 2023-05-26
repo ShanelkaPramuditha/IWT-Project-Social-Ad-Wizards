@@ -1,0 +1,42 @@
+h1
+{
+    text-align: center;
+}
+
+.content
+{
+    margin-left: 60px;
+    margin-top: 35px;
+    margin-right: 60px;
+}
+
+.button a
+{
+   text-decoration: none;
+    background-color: red;
+    padding: 10px 7px 10px 7px;
+    border-radius: 10px;
+    margin-left: 45%;
+    
+
+}
+
+
+a:hover
+{
+    background-color: yellow;
+    color:deeppink;
+}
+
+.image img
+{
+    float:right;
+    width:25%;
+}
+
+img
+{
+    width:30%;
+    height:auto;
+}
+
