@@ -12,7 +12,7 @@
     <!-- open Navigation bar with PHP -->
     <?php include 'header.php' ?>
 
-<div class="controler">
+<div>
 
 <h1>test</h1></br>
 <h1>test</h1></br>

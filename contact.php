@@ -12,7 +12,7 @@
     <!-- open Navigation bar with PHP -->
     <?php include 'header.php' ?>
 
-<div class=controler>
+<div>
     <h1>Contact Us</h1>
     
     <form method="post">

@@ -10,7 +10,7 @@
 
 <body>
     <?php include 'header.php' ?>
-<div class=controler>
+<div>
     <h1>Manager dashboard</h1>
 </div>
 </body>

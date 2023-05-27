@@ -9,7 +9,6 @@
     <!-- Title of the page -->
     <title>Social Ad Wizards</title>
     <!-- JavaScript Script Files -->
-    <script src="assets/js/header.js"></script>
     <script src="assets/js/login.js"></script>
 </head>
 

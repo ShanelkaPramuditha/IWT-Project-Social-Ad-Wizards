@@ -12,7 +12,7 @@
 
 <body>
 <div class="footer">
-  <p>Footer</p>
+  <p>FAQ</p>
 </div>
 </body>
 </html>

@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <!-- Navigation bar with PHP -->
+    <!-- Navigation panel with PHP -->
     <?php include 'header.php' ?>
-<div class=controler">
+<div>
     <h1>Index in PHP</h1>
 </div>
 <h1>test</h1></br>
@@ -28,7 +28,7 @@
 <h1>test</h1></br>
 <h1>test</h1></br>
 <h1>test</h1></br>
-    <!-- Footer bar with PHP -->
+    <!-- Footer with PHP -->
     <?php include 'footer.php' ?>
 </body>
 </html>
