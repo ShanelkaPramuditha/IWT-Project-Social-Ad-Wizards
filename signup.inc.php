@@ -9,7 +9,7 @@
     $psw = $_POST["psw"];
     $pswRepeat = $_POST["psw-repeat"];
 
-    require_once 'dbh.inc.php';
+    require_once 'connection.php';
 
     if (emptyInputs($fname, $lname, $email, $phone, $dob, $gender, $psw, $pswRepeat) !== false){
         exit();

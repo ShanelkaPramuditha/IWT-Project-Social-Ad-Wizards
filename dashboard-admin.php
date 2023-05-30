@@ -26,7 +26,7 @@
         </tr>
         
         <?php
-        include 'include/dbh.inc.php';
+        include 'connection.php';
 
         // SQL query to fetch data from the "users" table
         $sql = "SELECT first_name, last_name, email, user_role, profile_picture FROM registered_users";
