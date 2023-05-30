@@ -12,7 +12,7 @@
 
 <body>
 <div class="footer">
-  <p>FAQ</p>
+    <p><a style="text-decoration:none; text-color:White" href="manager-faq.php">FAQ</a></p>
 </div>
 </body>
 </html>
