@@ -49,7 +49,15 @@
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit" class="btn">Login</button>
+    
+
+    <!-- Shift to the sign up page -->
+    <label>You haven't an account <a href="signup.php">click here</a>
+    </label>
+    
     <button type="button" class="btn cancel" onclick="closeLoginForm()">Close</button>
+
+
   </form>
 </div>
 </body>
