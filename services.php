@@ -10,12 +10,9 @@
 
 <body>
     <?php include 'header.php' ?>
-<<<<<<< yasitha-01
-<div class=controler">
-	<h3>Test</h3>
-=======
 <div>
->>>>>>> main
+	<h3>Test</h3>
+</div>
     <h1>Services in PHP</h1>
 </div>
 </body>
