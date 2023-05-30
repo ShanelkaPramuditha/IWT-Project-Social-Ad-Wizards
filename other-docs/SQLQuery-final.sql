@@ -30,7 +30,29 @@ VALUES
 
 
 
+-- create faq data table
+CREATE TABLE faq `social_ad_wizards`.`faq` (
+	`faq_id` INT NOT NULL AUTO_INCREMENT ,
+	`s_user_id` INT NOT NULL ,
+	`question` VARCHAR(1000) NOT NULL ,
+	`answer` VARCHAR(1000) DEFAULT NULL ,
+	PRIMARY KEY (`faq_id`)) ENGINE = InnoDB;
 
+
+
+
+
+
+
+-- Create FAQ table
+CREATE TABLE FAQ (
+	FAQ_ID int IDENTITY(1,1),
+	Manager_ID int NOT NULL,
+	Question varchar(1000) NOT NULL,
+	Answer varchar(1000),
+	CONSTRAINT FAQ_PK PRIMARY KEY(FAQ_ID),
+	CONSTRAINT FAQ_FK1 FOREIGN KEY(Manager_ID) REFERENCES Manager(Manager_ID),
+);
 
 
 
