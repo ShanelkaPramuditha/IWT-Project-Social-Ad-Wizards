@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatable" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/about.css">
-    <title>Socail Ad Wizards</title>
-</head>
+<?php
 
-<body>
-    <!-- open Navigation bar with PHP -->
-    <?php include 'header.php' ?>
-    
-<div class=controler>
-    <h1>About Us</h1>
-    </div>
+// Retrieve form data
+$name = $_POST['name'];
 
-    <div class="content">
-        <h3>A strong online presence is essential for digital marketing agencies. So is building a remarkable website for introducing your company to the world.
+// Database connection
+$servername = "localhost";  // Replace with your database server name
+$username = "root";     // Replace with your database username
+$password = "";     // Replace with your database password
+$dbname = "ad";       // Replace with your database name
 
-Although it displays your company’s identity, “About Us” pages are usually overlooked. Therefore, you need to create a unique page that represents your digital marketing agency.
+// Create a connection
+$conn = new mysqli("localhost", "root", "", "ad");
 
-When you truly think about it, developing a website is in a lot of ways, a task that requires sheer determination and an exercise of willpower. There is no doubt there will be plenty of stages where you will easily be distracted by the fundamentals of the entire design process. And when that happens, most people forget about the most vital aspects of the website, and that is building compelling and unique content.  
-        </h3>
-    </div>
-    <br>
-    <div class="button">
-        <a href="#">Read more</a>
-    </div>
-    
-    <div class="image">
-        <img src="assets/images/site-img/1.jpg">
-    </div>
-    
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-</body>
-</html>
+// Insert data into the database
+$sql = "INSERT INTO faq(Question) VALUES ('$name')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Data inserted successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Close the connection
+$conn->close();
+?>
