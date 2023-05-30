@@ -18,7 +18,6 @@
 <!-- Header Panel of the site -->
 <header>
     <div class="header">Social Ad Wizards</div>
-    <div class="container">
         <!-- Logo Image -->
         <img src="assets/images/site-img/logo.png" alt="LOGO" class="logo">
         <!-- Navigation Panel Buttons -->

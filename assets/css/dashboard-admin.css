@@ -1,0 +1,23 @@
+@import "styles.css";
+
+.container {
+    height:100%;
+    background-color:LightGray;
+}
+
+.data-table {
+    width: 99%;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+.data-table th, td {
+    border: 1px solid #000000;
+}
+
+button {
+    width: 150px;
+    height: 20px;
+    left: 1000px;
+    top: 90px;
+}

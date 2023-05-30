@@ -13,6 +13,7 @@
 <body>
 <div class="footer">
   <p>FAQ</p>
+  <a href="dashboard-admin.php">Admin Dashboard</a>
 </div>
 </body>
 </html>
