@@ -12,8 +12,8 @@
 
 <body>
 <div class="footer">
-  <p>FAQ</p>
-  <a href="dashboard-admin.php">Admin Dashboard</a>
+    <p><a style="text-decoration:none; text-color:White" href="manager-faq.php">FAQ</a></p>
+    <p><a style="text-decoration:none; text-color:White" href="dashboard-admin.php">Admin Dashboard</a></p>
 </div>
 </body>
 </html>
