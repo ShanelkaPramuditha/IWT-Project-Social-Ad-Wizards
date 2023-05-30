@@ -1,20 +1,21 @@
 <?php
 
-    // this line 4 to 7 depend on your pc local host details.
+    // Database connection - below 4 lines depend on your pc local host details.
     $servername = 'localhost';
     $username = 'root';
     $password = '';
-    $dbname = 'test';  //this (test) our common database name. change it[Social_Ad_Wizards].
+    $dbname = 'social_ad_wizards';  //this our common database name.
 
-    // create the connction
+    // create a connction
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // check the connection
-    if ($conn-> connect_error){
-        die ("Connection failed:".$conn->connect_error);
-    }else{
-        echo "connection successfully";
+    if ($conn -> connect_error) {
+        die ("Connection failed: " . $conn -> connect_error);
+    }
+    else {
+        echo "Connection Successful!";
     }
 
-    $conn -> close();
+  //  $conn -> close();
 ?>
