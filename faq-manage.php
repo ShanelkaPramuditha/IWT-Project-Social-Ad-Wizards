@@ -12,7 +12,7 @@
 
 <body>
 <div class="footer">
-  <p>FAQ</p>
+  <a href="faq.php">FAQ</a>
 </div>
 </body>
 </html>
