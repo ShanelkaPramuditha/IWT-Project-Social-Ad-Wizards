@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
     <title>Sign up form</title>
+    
 </head>
 <body>
     
-    
+ 
     <!--Create the sinup form as the one element div-->
-    <form action="/action_page.php" style="border:1px solid #ccc">
+    <form action="include/signup.inc.php" style="border:1px solid #ccc">
         <div class="container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
@@ -48,7 +49,7 @@
             
             <div class="clearfix">
                 <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
+                <button type="submit" name="submit" class="signupbtn">Submit</button>
             </div>
         </div>
         

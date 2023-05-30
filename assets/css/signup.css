@@ -53,6 +53,8 @@ button:hover {
 /* Add padding to container elements */
 .container {
   padding: 16px;
+  width: 70%; 
+
 }
 
 /* Clear floats */
