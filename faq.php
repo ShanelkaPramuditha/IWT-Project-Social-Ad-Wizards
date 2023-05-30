@@ -17,10 +17,13 @@
 <h1>test</h1></br>
 <h1>test</h1></br>
     <h1>FAQ</h1>
+
 <div class="al">	
-<form method="POST" action="#" class="i">
+
+<!--form creation-->
+<form method="POST" action="config.php" class="i">
 <center>Question :
-<input type ="text" placeholder="  Ask your Question...." size="100"></center>
+<input type ="text" name="name"  placeholder="  Ask your Question...." size="100"></center>
 <br>
 <br>
 <center><input type="submit" class ="button"value="SEND"></center>
