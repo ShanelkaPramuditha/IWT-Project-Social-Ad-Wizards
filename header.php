@@ -32,12 +32,12 @@
             </ul>
         </nav>
         <!-- Login image -->
-        <img src="assets/images/site-img/login.png" alt="LOGIN" onclick="openLoginForm()" class="login">
+        <a href="log-in.php"><img src="assets/images/site-img/login.png" alt="LOGIN" class="login"></a>
     </div>
 </header>
 
 <!-- Login Pop UP FORM -->
-<div class="form-popup" id="loginForm">
+<!--<div class="form-popup" id="loginForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
 
@@ -50,7 +50,7 @@
     <button type="submit" class="btn">Login</button>
     
 
-    <!-- Shift to the sign up page -->
+    <!-- Shift to the sign up page --
     <label>You haven't an account <a href="signup.php">click here</a>
     </label>
     
@@ -58,6 +58,6 @@
 
 
   </form>
-</div>
+</div>-->
 </body>
 </html>

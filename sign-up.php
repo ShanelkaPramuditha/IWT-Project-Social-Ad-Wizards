@@ -1,5 +1,16 @@
+<?php
+session_start();
+
+// Redirect to dashboard if the user is already logged in
+if (isset($_SESSION['email'])) {
+    header("Location: logged-user.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
-<html lang = "sin">
+<html lang = "en">
+  <!--
   <style>
     body{
       margin: 0;
@@ -109,15 +120,12 @@
     }
 
 
-    </style>
+    </style>-->
 <head>
-
-
-
-<title>
-  ad wizard login page
-</title>
+<title>Sign Up</title>
 </head>
+
+<!-- Please remove this header and header css
 <body>
 <header>
   <h1 class ="logo" >Ad Wizard logo </h1>
@@ -130,58 +138,73 @@
     <button class="btnlogin-popup">Login</button>
   </nav>
 </header>
+  -->
 
 
 <div class="signin">
   <div class="form_box">
     <h3> Sign in</h3>
-    <form action="#">
-  
-        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i><ion-icon name="mail"></ion-icon></span>
-          <input type="Username" name="Username" placeholder="Email" required />
-        </div>
-        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" name="password" placeholder="Password" required />
-        </div>
-        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" name="password" placeholder="Re-type Password" required />
-        </div>
+    <form action="action.php" method="POST">
+
         <div class="row clearfix">
           <div class="col_half">
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i><ion-icon name="person-add"></ion-icon></span>
-              <input type="text" name="name" placeholder="First Name" />
+              <label for="fname">First Name</label><br>
+              <input type="text" name="fname" placeholder="First Name">
             </div>
           </div>
           <div class="col_half">
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i><ion-icon name="person-add"></ion-icon></span>
-              <input type="text" name="name" placeholder="Last Name" required />
+            <label for="lname">Last Name</label><br>
+            <input type="text" name="lname" placeholder="Last Name" required>
             </div>
           </div>
         </div>
-            <div class="input_field radio_option">
-            <input type="radio" name="radiogroup1" id="rd1">              <label for="rd1">Male</label>
-            <input type="radio" name="radiogroup1" id="rd2">
-            <label for="rd2">Female</label>
-            </div>
-            <div class="input_field select_option">
+  
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i><ion-icon name="mail"></ion-icon></span>
+          <label for="email">E-mail</label><br>
+          <input type="email" name="email" placeholder="E-mail" required>
+        </div>
+        
+        <div>
+          <label for="phone_no">Phone Number</label><br>
+          <input type="text" name="phone_no" placeholder="Phone Number" required><br>
+        </div>
+
+        <div>
+          <label for="birthday">Date of Birth</label><br>
+          <input type="date" id="birthday" name="birthday" required><br>
+        </div>
+
+        <div>
+          <label for="gender">Gender</label><br>
+          <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select><br>
+        </div>
+        
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
+          <label for="password">Password</label><br>
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
+          <label for="password">Confirm Password</label><br>
+          <input type="password" name="password" placeholder="Re-type Password" required>
+        </div>
+
+            <input type="text" name="role"><br>
     
               <div class="select_arrow"></div>
             </div>
           <div class="agree">
             <input type="checkbox" id="cb1">
-        <label for="cb1">I agree with terms and conditions</label>
+        <label for="cb1">I accept the Terms of use & Privacy policy</label>
           </div>
-          <div class="input_field checkbox_option">
-          </div>
-        <input class="button" type="submit" value="Register" />
-  
-        <div class="or">OR</div>
-
-<div class="right">
-<button class="signin_google">Gmail</button>
-</div>
-
-</div>
+          <div class="input_field checkbox_option"></div>
+        <input class="button" type="submit" name="signup" value="Sign Up"/>
+      </div>
 </div>
 
 
