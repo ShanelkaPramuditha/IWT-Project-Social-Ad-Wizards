@@ -64,6 +64,7 @@
     <a href=#>Export to excel</a>
     <table class="data-table">
         <tr>
+            <th>Profile Picture</th>
             <th>Name</th>
             <th>E-mail</th>
             <th></th>

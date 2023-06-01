@@ -4,58 +4,38 @@
 <head>
     <link rel="stylesheet" type="text/css" href="assets/css/dashboard-admin.css">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
 </head>
 
 <body>
     <!-- Navigation panel with PHP -->
 
+<!--Create the sinup form as the one element div-->
+<h1>Sign Up</h1>
 
-<div>
-    <h1>Admin Dashboard</h1>
-</div>
+<form action="process-signup-staff.php" method="POST" id="signup" novalidate>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+    </div>
 
-<div class="container">
-    <h1 class="center">Add Staff Account</h1>
-</div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+    </div>
 
-<div class="container">
-    <h1 class="center">Registered User Board</h1>
-    <a href=#>Export to excel</a>
-    <table class="data-table">
-        <tr>
-            <th>Name</th>
-            <th>E-mail</th>
-            <th></th>
-        </tr>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+    </div>
 
-        <?php
-        // SQL query to fetch data from the "users" table
-        $sql = "SELECT first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'user'";
+    <div>
+        <label for="password_confirmation">Repeat Password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation">
+    </div>
 
-        // Execute the query
-        $result = $conn -> query($sql);
-
-        // Check if any rows were returned
-        if ($result -> num_rows > 0) {
-            // Loop through the rows and display the data in the table
-            while ($row = $result -> fetch_assoc()) {
-                echo "<tr>";
-                    echo '<td><img src="' . $row["profile_picture"] . '" width="50" height="50"></td>';
-                    echo "<td>" . $row["first_name"] . " " . $row["last_name"] . "</td>";
-                    echo "<td>" . $row["email"] . "</td>";
-                    echo '<td class="cell-button"><button>Edit</button></td>';
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>No data found.</td></tr>";
-        }
-
-        // Close the connection
-        $conn -> close();
-        ?>
-
-    </table>
-</div>
+    <button>Sign Up</button>
+</form>
 
 <!-- Footer with PHP -->
 <?php include 'footer.php' ?>
