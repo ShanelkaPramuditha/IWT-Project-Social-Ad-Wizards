@@ -1,6 +1,7 @@
-body {
-    margin-top: 120px; /* Adjust the value as needed to create space below the header */
-}
+@import 'header.css';
+@import 'footer.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+
 
 h1 {
     color: red;
