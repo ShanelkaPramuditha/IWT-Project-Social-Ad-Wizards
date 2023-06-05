@@ -1,16 +1,28 @@
+<!-- Import config file -->
+<?php
+require_once '../config/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+<!-- <style 
+    </style> -->
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatable" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <!-- Import Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="././src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="././src/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page styles --> 
     <link rel="stylesheet" type="text/css" href="./src/css/faq.css">
-    <title>Socail Ad Wizards</title>
+    <title>FAQ</title>
 </head>
 
 <body>
     <!-- open Navigation bar with PHP -->
-    <?php include 'header.php' ?>
+    <?php include_once '../../header.php' ?>
 
 <div>
 
@@ -33,6 +45,6 @@
     </div>
 </div>
     <!-- Footer bar with PHP -->
-    <?php include 'footer.php' ?>
+    <?php include_once '../components/footer.php' ?>
 </body>
 </html>

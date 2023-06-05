@@ -1,30 +1,28 @@
 <!-- Import config file -->
 <?php
-require_once '../../config.php';
+require_once '../config/config.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- <style 
-    </style> -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo BASE_URL; ?>">
-    <!-- Import Style Sheets -->
-    <!-- Header and Footer -->
-    <link rel="stylesheet" type="text/css" href="././src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="././src/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Page styles -->
-    <link rel="stylesheet" type="text/css" href="./src/css/about.css">
+    <link rel="icon" type="image/ico" href="./assets/images/site-img/favicon/favicon.ico">
     <title>About</title>
+    <!-- Import Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/about.css">
 </head>
 
 <body>
     <!-- open Navigation bar with PHP -->
-    <?php include_once '../../header.php' ?>
-    
+    <?php include_once '../components/header.php'; ?>
+
     <div class="background">
        
        </div>
@@ -43,11 +41,9 @@ require_once '../../config.php';
                  <p>5 people In our team</p>
                   <p>Founded in 2023</p>  
                    <p>Sortlist member since 2022</p>               
-                  <p>From Sri Lanka </p>              
+                  <p>From Sri Lanka </p>
                </div>
 
-               <?php include_once '../../footer.php' ?>
+               <?php include_once '../components/footer.php'; ?>
    </body>
    </html>
-   
-   

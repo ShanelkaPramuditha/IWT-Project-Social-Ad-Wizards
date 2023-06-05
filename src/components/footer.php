@@ -1,10 +1,4 @@
-<!-- <style></style>
-<head>
-   <title>Ad wizard</title>
-    
-</head>
-
-<body> -->
+<!-- Footer Content -->
 <footer class="footer">
   <div class="container">
     <div class="row">
@@ -22,7 +16,7 @@
           <li>A: 3 days or less.</li>
           <li>Q: Do I have to be registered to create an advertisement?</li>
           <li>A: Yes, definitely.</li>
-          <li><a href="manager-faq.php">See more...</a></li>
+          <li><a href="./src/views/faq.php">See more...</a></li>
         </ul>
       </div>
       <div class="footer-col">
