@@ -1,19 +1,15 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatable" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/login.css"> -->
     <!-- Title of the page -->
-    <title>Social Ad Wizards</title>
+    <!-- <title>Social Ad Wizards</title> -->
     <!-- JavaScript Script Files -->
-    <script src="assets/js/login.js"></script>
+    <!-- <script src="assets/js/login.js"></script>
 </head>
 
 <body>
-<div class="overlay" id="overlay" onclick="closeLoginForm()"></div>
+<div class="overlay" id="overlay" onclick="closeLoginForm()"></div> -->
 
 <!-- Header Panel of the site -->
 <header>
@@ -26,7 +22,7 @@
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="services.php">Services</a></li>
-                <li><a href="about.php">About</a></li>
+                <li><a href="./src/views/about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <input type="text" placeholder="Search.." class="search">
             </ul>
@@ -59,5 +55,5 @@
 
   </form>
 </div>-->
-</body>
-</html>
+<!-- </body>
+</html> -->

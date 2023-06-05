@@ -1,29 +1,71 @@
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
- }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+body{
+  font-family: sans-serif;
+}
+.container{
+  max-width: 1170px;
+  margin: auto;
+}
+.footer{
+  background: #399ede;
+  padding: 70px;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
 
- * {
-    box-sizing: border-box;
-  }
-  
-  /* Create three equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+}
+.footer-col h4{
+  font-size: 18px;
+  color: rgb(31, 85, 133);
+  margin-bottom: 25px;
+  font-weight: 500;
+  position: relative;
 
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background:#0a3e66;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul{
+  list-style: none;
+}
+.footer-col ul p{
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+
+}
+.footer-col li{
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+.fa {
+  padding: 18px;
+  font-size: 30px;
+  width: 20px;
+  text-align:left;
+  text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}

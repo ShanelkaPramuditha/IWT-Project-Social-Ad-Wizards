@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatable" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/login.css">
     <!-- Title of the page -->
     <title>Social Ad Wizards</title>
     <!-- JavaScript Script Files -->

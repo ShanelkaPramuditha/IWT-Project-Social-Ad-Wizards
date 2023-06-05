@@ -1,70 +1,29 @@
+<!-- Import config file -->
+<?php
+require_once '../../config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<style media="screen">
-      *,
-
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: #1d7ee5;
-}
-
-form{
-    height: 600px;
-    width: 500px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 30%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
-}
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
-form h3{
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align:left;
-    padding-top: 20px;
-    padding: 20px;
-}
-
-.container {
-font-family: 'Poppins',sans-serif; 
-position: absolute;
-width: 454px;
-height: 296px;
-left: 900px;
-top: 246px;
-line-height: 2;
-font-size: 40px;
-color: #ffffff;
-  }
-    </style>
+<!-- <style 
+    </style> -->
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatable" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/about.css">
-    <title>Socail Ad Wizards</title>
+    <base href="<?php echo BASE_URL; ?>">
+    <!-- Import Style Sheets -->
+    <!-- Header and Footer -->
+    <link rel="stylesheet" type="text/css" href="././src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="././src/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page styles -->
+    <link rel="stylesheet" type="text/css" href="./src/css/about.css">
+    <title>About</title>
 </head>
 
 <body>
     <!-- open Navigation bar with PHP -->
-    <?php include 'header.php' ?>
+    <?php include_once '../../header.php' ?>
     
     <div class="background">
        
@@ -86,6 +45,8 @@ color: #ffffff;
                    <p>Sortlist member since 2022</p>               
                   <p>From Sri Lanka </p>              
                </div>
+
+               <?php include_once '../../footer.php' ?>
    </body>
    </html>
    
