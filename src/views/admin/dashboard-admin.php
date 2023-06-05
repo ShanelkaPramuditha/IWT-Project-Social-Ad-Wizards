@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="assets/css/dashboard-admin.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
     <title>Admin Dashboard</title>
 </head>
 

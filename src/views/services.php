@@ -1,97 +1,31 @@
+<!-- Import config file -->
+<?php
+require_once '../config/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatable" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
+    <title>Home</title>
+    <!-- Import Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/services.css">
 </head>
-<style>
-    *{
-      background-color:rgb(175, 211, 226); 
-   }
-    .he{
-      text-align: center;
-      font-family: "Times New Roman", Times, serif;
-    }
- div
-{
-  text-align:center;
-    font-size: 10px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    height: 100px;
-    font-size: 30px; 
-}
- 
-.one
-{
-  background-color:rgb(175, 211, 226);
-  font-size:x-large;
-    padding: 50px;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    width: 1300px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-}
-.one img{
-  
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
 
-}
-.h２{
-  text-align: center;
-}
-.two
-{
-  align-items: center;
-  background-color:rgb(175, 211, 226);
-  font-size: x-large;
-    padding: 50px;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    width: 1300px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-
-}
-.two img{
-  width: 200px;
-  height: 200px;
-  border-radius: 70%;
-}
-.three
-{
-  background-color: rgb(175, 211, 226);
-    font-size:x-large;  
-   padding: 50px;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    width: 1300px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-}
-.three img{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-  </style>
-
-    <?php include 'header.php' ?>
-    <title>
-    Ad wizard services
-  </title>
+<body>
+    <!-- open Navigation bar with PHP -->
+    <?php include_once '../components/header.php'; ?>
 
   <h1 class="he">“We provide 3 main services for the
     effectiveness of your ads" </h1>
-  
-      <body>
+
 
           <div class="one">
             <h2 style="font-size: 45px;color: rgb(69, 71, 74);">Facebook Ad creation</h2>
@@ -124,6 +58,8 @@
             </p>
             <img src="https://leadsdubai.com/wp-content/uploads/2021/02/Youtube-Banner.jpg">
           </div>
+
+          <?php include_once '../components/footer.php'; ?>
         
        </body>
 </html>

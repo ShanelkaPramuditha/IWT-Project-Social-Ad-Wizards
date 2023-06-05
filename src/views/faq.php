@@ -1,14 +1,29 @@
+<!-- Import config file -->
+<?php
+require_once '../config/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+<!-- <style 
+    </style> -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="assets/css/managefaq.css" >
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>FAQ Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <!-- Import Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="././src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="././src/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>FAQ</title>
 </head>
+
 <body>
-  <?php include_once 'header.php'?>
+    <!-- open Navigation bar with PHP -->
+    <?php include_once '../components/header.php' ?>
 
   <h1>FAQ! Need any help?</h1>
 
@@ -50,7 +65,7 @@
       <p>No, to run Instagram ads, you need to have an active Instagram account connected to a Facebook Page. Our team can assist you in setting up and managing your Instagram advertising account.</p>
     </div>
   </div>
-
-  <?php include_once 'footer.php';?>
+    <!-- Footer bar with PHP -->
+    <?php include_once '../components/footer.php' ?>
 </body>
 </html>

@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="assets/css/dashboard-admin.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/signup.css">
 </head>
 
 <body>
