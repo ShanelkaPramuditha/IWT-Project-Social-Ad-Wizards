@@ -8,118 +8,29 @@ if (isset($_SESSION['email'])) {
 }
 ?>
 
+<!-- Import config file -->
+<?php
+require_once '../../config/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Sign up</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #1d7ee5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    .form {
-      width: 500px;
-      background-color: rgba(255, 255, 255, 0.13);
-      border-radius: 10px;
-      padding: 50px;
-      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-      backdrop-filter: blur(10px);
-    }
-
-    .form h3 {
-      text-align: center;
-      font-size: 24px;
-      color: #fff;
-      margin-bottom: 30px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .form-row label {
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 5px;
-    }
-
-    .form-row input,
-    .form-row select {
-      width: 100%;
-      height: 40px;
-      padding: 5px 10px;
-      border-radius: 3px;
-      border: none;
-      background-color: rgba(255, 255, 255, 0.07);
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .form-row .input_field {
-      position: relative;
-    }
-
-    .form-row .input_field span {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      color: #fff;
-    }
-
-    .form-row .input_field input {
-      padding-left: 40px;
-    }
-
-    .form-row .input_field i {
-      margin-right: 4px;
-    }
-
-    .form-row .agree label {
-      font-size: 14px;
-    }
-
-    .submit-btn {
-      display: flex;
-      justify-content: center;
-    }
-
-    .button {
-      margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 1px;
-    cursor: pointer;
-    border-radius: 8px;
-    border: 0;
-    }
-    .agree {
-    display: flex;
-    align-items: flex-start;
-    size:5px ;
-    color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
+    <title>Home</title>
+    <!-- Import Style Sheets -->
+    <!-- <link rel="stylesheet" href=""> -->
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/home.css">
 </head>
 
 <body>
+    <!-- open Navigation bar with PHP -->
+    <?php include_once '../../components/header.php'; ?>
+
   <div class="form">
     <form action="action.php" method="POST">
       <h3>Sign up</h3>
@@ -178,6 +89,8 @@ if (isset($_SESSION['email'])) {
     <input class="button" type="submit" name="signup" value="Sign Up"/>
     </div>
   </form>
+
+  <?php include_once '../../components/footer.php'; ?>
 </body>
 </html>
 

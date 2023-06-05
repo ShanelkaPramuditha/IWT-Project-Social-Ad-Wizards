@@ -16,7 +16,7 @@ require_once '../config/config.php';
     <link rel="stylesheet" type="text/css" href="./src/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Page styles --> 
-    <link rel="stylesheet" type="text/css" href="./src/css/about.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./src/css/about.css"> -->
 </head>
 
 <body>

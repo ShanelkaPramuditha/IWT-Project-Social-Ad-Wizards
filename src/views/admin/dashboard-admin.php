@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dashboard-admin.css">
     <title>Admin Dashboard</title>
 </head>
 
@@ -28,7 +28,7 @@
         </tr>
         
         <?php
-        include 'connection.php';
+        include '../../config/database/connection.php';
 
         // SQL query to fetch data from the "users" table
         $sql = "SELECT first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'manager' OR user_role = 'designer'";
