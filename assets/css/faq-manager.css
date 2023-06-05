@@ -1,0 +1,24 @@
+button{
+    background-color: aqua;
+    margin-top: 30px;
+    padding: 10px;
+    width:120px;
+    margin-left:700px;
+    border-radius: 10px;
+}
+
+button:hover
+{
+    background-color: red;
+}
+
+table
+{
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: bisque;
+}
+
+
