@@ -20,10 +20,10 @@ CREATE TABLE `social_ad_wizards`.`registered_users` (
 
 INSERT INTO `registered_users` (`profile_picture`, `user_pass`, `email`, `gender`, `date_of_birth`, `first_name`, `last_name`, `phone_no`, `user_role`)
 VALUES
-	(DEFAULT, 'test@123', 'testuser@gmail.com', 'Male', '2000-05-01', 'Ftest', 'Ltest', '0771237653', 'manager'),
-	('uploads/profile-pictures/user2.jpg', 'test2@123', 'testuser2@gmail.com', 'Female', '2001-06-12', 'John', 'Doe', '0771234567', 'user'),
-	('uploads/profile-pictures/user3.jpg', 'test3@123', 'testuser3@gmail.com', 'Male', '1998-09-21', 'Jane', 'Smith', '0779876543', 'designer'),
-	(DEFAULT, 'test4@123', 'testuser4@gmail.com', 'Female', '1995-03-15', 'Michael', 'Johnson', '0777654321', 'user'),
+	(DEFAULT, 'admin', 'admin@gmail.com', 'Male', '2000-05-01', 'Ftest', 'Ltest', '0771237653', 'admin'),
+	('uploads/profile-pictures/user2.jpg', 'designer', 'designer@gmail.com', 'Female', '2001-06-12', 'John', 'Doe', '0771234567', 'designer'),
+	('uploads/profile-pictures/user3.jpg', 'test3@123', 'testuser3@gmail.com', 'Male', '1998-09-21', 'Jane', 'Smith', '0779876543', 'user'),
+	(DEFAULT, 'manager', 'manager@gmail.com', 'Female', '1995-03-15', 'Michael', 'Johnson', '0777654321', 'manager'),
 	('uploads/profile-pictures/user4.jpg', 'test5@123', 'testuser5@gmail.com', 'Male', '2002-11-07', 'Emily', 'Anderson', '0771112222', 'user'),
 	(DEFAULT, 'test6@123', 'testuser6@gmail.com', 'Female', '1997-08-25', 'David', 'Wilson', '0773334444', 'user'),
 	(DEFAULT, 'test7@123', 'testuser7@gmail.com', 'Male', '2000-02-17', 'Sophia', 'Taylor', '0775556666', 'user');

@@ -1,11 +1,12 @@
+<!-- Session destroy -->
 <?php
 session_start ();
 
 $_SESSION = [];
 
 session_destroy ();
-
-header ('Location: ../views/home.php');
+// Redirect to home page
+header ('Location: ../../index.php');
 exit;
 
 ?>

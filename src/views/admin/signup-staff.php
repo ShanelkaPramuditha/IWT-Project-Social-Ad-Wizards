@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+if (!isset ($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'admin')) {
+    header('Location: ../home.php');
+    exit;
+}
+?>
 
+<!-- Import config file -->
+<?php
+require_once '../../config/config.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="./src/css/signup.css">
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
 </head>
 
 <body>
-    <!-- Navigation panel with PHP -->
+    <!-- open Navigation bar with PHP -->
+    <?php include_once '../../components/header.php'; ?>
+
 
 <!--Create the sinup form as the one element div-->
 <h1>Sign Up</h1>
@@ -38,6 +56,6 @@
 </form>
 
 <!-- Footer with PHP -->
-<?php include 'footer.php' ?>
+<?php include_once '../../components/footer.php'; ?>
 </body>
 </html>

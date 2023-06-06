@@ -31,7 +31,7 @@ require_once '../../config/config.php';
     <h1>Admin Dashboard</h1>
 </div>
 
-<a href="signup-staff.php">Add a New Staff Account</a>
+<a href="./src/views/admin/signup-staff.php">Add a New Staff Account</a>
 
 <div class="table-container">
     <h1 class="center">Staff User Board</h1>

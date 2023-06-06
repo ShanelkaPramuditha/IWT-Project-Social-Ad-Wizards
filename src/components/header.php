@@ -63,7 +63,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <?php
         else: ?>
             <nav class="navbar">
-                <a href="./index.php">HOME</a>
+                <a href="./index.php#home">HOME</a>
                 <a href="./index.php#gallery">GALLERY</a>
                 <a href="./index.php#services">SERVICES</a>
                 <a href="./index.php#about">ABOUT</a>
@@ -91,7 +91,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
 
-if (strpos ($currentPage, 'dashboard-admin.php') !== FALSE) {
+if ((strpos ($currentPage, 'dashboard-admin.php') !== FALSE) || (strpos($currentPage, 'signup-staff.php') !== FALSE)) {
     include_once '../../components/sign-in/sign-in.php';
 } elseif (strpos($currentPage, 'dashboard-admin.php') !== TRUE) {
     include_once '../components/sign-in/sign-in.php';
