@@ -3,14 +3,14 @@ session_start();
 
 // Redirect to dashboard if the user is already logged in
 if (isset($_SESSION['email'])) {
-    header("Location: logged-user.php");
+    header("Location: ../../index.php");
     exit;
 }
 ?>
 
 <!-- Import config file -->
 <?php
-require_once '../../config/config.php';
+require_once '../config/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +27,10 @@ require_once '../../config/config.php';
 
 <body>
     <!-- open Navigation bar with PHP -->
-    <?php include_once '../../components/header.php'; ?>
+    <?php include_once '../components/header.php'; ?>
 
   <div class="form">
-    <form action="action.php" method="POST">
+    <form action="./src/config/form/sign-up-action.php" method="POST">
       <h3>Sign up</h3>
       <div class="form-row">
         <div class="input_field">
@@ -88,7 +88,7 @@ require_once '../../config/config.php';
     </div>
   </form>
 
-  <?php include_once '../../components/footer.php'; ?>
+  <?php include_once '../components/footer.php'; ?>
 </body>
 </html>
 

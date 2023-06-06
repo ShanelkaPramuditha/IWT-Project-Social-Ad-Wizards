@@ -17,7 +17,7 @@
       
       <button type="submit">Sign In</button>
     </form>
-    <p class="sign-in">Looking to <a href="./src/components/sign-up/sign-up.php">Create an account </a>?</p>
+    <p class="sign-in">Looking to <a href="./src/views/sign-up.php">Create an account </a>?</p>
   </div>
 </div>
 

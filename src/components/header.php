@@ -91,7 +91,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
 
-if ((strpos($currentPage, 'sign-up.php') !== FALSE) OR (strpos ($currentPage, 'dashboard-admin.php') !== FALSE)) {
+if (strpos ($currentPage, 'dashboard-admin.php') !== FALSE) {
     include_once '../../components/sign-in/sign-in.php';
 } elseif (strpos($currentPage, 'dashboard-admin.php') !== TRUE) {
     include_once '../components/sign-in/sign-in.php';

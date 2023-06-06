@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connection.php');
+require_once('../../config/database/connection.php');
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
     if ($result->num_rows == 1) {
         // Login successful
         $_SESSION['email'] = $email;
-        header("Location: logged-user.php");
+        header("Location: ../../../index.php");
         exit;
     } else {
         // Login failed
@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
     if ($conn->query($sql) === true) {
         // Registration successful
         $_SESSION['email'] = $email;
-        header("Location: logged-user.php");
+        header("Location: ../../../index.php");
         exit;
     } else {
         // Registration failed
