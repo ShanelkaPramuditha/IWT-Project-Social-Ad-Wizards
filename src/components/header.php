@@ -27,11 +27,11 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <?php elseif ($userRole == 'manager'): ?>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
-        <a href="./index.php">DASHBOARD</a>
+        <a href="./src/views/manager/dashboard-manager.php">DASHBOARD</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
-        <a class="openPopup">MANAGER</a>
+        <a class="openPopupp" href="./src/config/log-out.php">MANAGER</a>
         <a class="openPopup"><img src="./assets/images/site-img/login.png" alt="MANAGER"></a>
     </div>
 
@@ -39,12 +39,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <?php elseif ($userRole == 'designer'): ?>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
-        <a href="./index.php">DASHBOARD</a>
+        <a href="./src/views/admin/dashboard-designer.php">DASHBOARD</a>
         <a href="./src/views/gallery.php">GALLERY</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
-        <a class="openPopup">DESIGNER</a>
+        <a class="openPopupp" href="./src/config/log-out.php">DESIGNER</a>
         <a class="openPopup"><img src="./assets/images/site-img/login.png" alt="DESIGNER"></a>
     </div>
 

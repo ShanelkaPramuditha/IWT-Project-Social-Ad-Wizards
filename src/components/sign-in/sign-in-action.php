@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: ../../views/admin/dashboard-admin.php');
             }
             elseif ($row['user_role'] === 'manager') {
-                header('Location: ../../views/admin/dashboard-manager.php');
+                header('Location: ../../views/manager/dashboard-manager.php');
             }
             elseif ($row['user_role'] === 'designer') {
-                header('Location: ../../views/admin/dashboard-designer.php');
+                header('Location: ../../views/designer/dashboard-designer.php');
             }
             else {
                 header('Location: ../../views/home.php');
