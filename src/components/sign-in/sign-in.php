@@ -4,8 +4,8 @@
   <div id="popupContent">
     <h3>Sign In</h3>
     <form id="signInForm" action="./src/components/sign-in/sign-in-action.php" method="POST">
-      <label for="username">E-mail / Username</label>
-      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      <label for="email">E-mail / Username</label>
+      <input type="text" id="email" name="email" placeholder="Enter your username" required>
       
       <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" required>
