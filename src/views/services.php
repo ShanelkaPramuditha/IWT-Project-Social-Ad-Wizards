@@ -1,27 +1,4 @@
-<!-- Import config file -->
-<?php
-require_once '../config/config.php';
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="<?php echo BASE_URL; ?>">
-    <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
-    <title>Home</title>
-    <!-- Import Style Sheets -->
-    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Page styles --> 
-    <link rel="stylesheet" type="text/css" href="./src/css/services.css">
-</head>
-
-<body>
-    <!-- open Navigation bar with PHP -->
-    <?php include_once '../components/header.php'; ?>
 
   <h1 class="he">“We provide 3 main services for the
     effectiveness of your ads" </h1>
@@ -58,8 +35,3 @@ require_once '../config/config.php';
             </p>
             <img src="https://leadsdubai.com/wp-content/uploads/2021/02/Youtube-Banner.jpg">
           </div>
-
-          <?php include_once '../components/footer.php'; ?>
-        
-       </body>
-</html>

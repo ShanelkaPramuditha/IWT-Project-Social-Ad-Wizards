@@ -5,9 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,900&display=swap');
 
-body {
-    margin-top: 120px;
-}
 .header-container {
     position: fixed;
     background-color: rgb(83, 90, 89);

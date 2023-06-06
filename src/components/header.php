@@ -1,3 +1,10 @@
+<?php
+$userRole = $_SESSION['user_role'] ?? '';
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
+<script src="./src/js/functions.js"></script>
+
 <!-- Header Navigation Panel -->
 <header class="header-container">
     <div class="header-name">Social Ad Wizards</div>
@@ -5,19 +12,19 @@
     <img src="./assets/images/site-img/logo/logo.svg" alt="LOGO" class="header-logo">
 
     <!-- Admin dashboard header panel ------------------------------------------------------------------------------------------------>
-    <?php if (strpos($_SERVER['PHP_SELF'], 'dashboard-admin.php') == TRUE):?>
+    <?php if ($userRole == 'admin'): ?>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/admin/dashboard-admin.php">DASHBOARD</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
-        <a class="openPopup">ADMIN</a>
+        <a class="openPopupp" href="./src/config/log-out.php">ADMIN</a>
         <a class="openPopup"><img src="./assets/images/site-img/login.png" alt="ADMIN"></a>
     </div>
 
     <!-- Manager Dashboard header panel ---------------------------------------------------------------------------------------------->
-    <?php elseif (strpos($_SERVER['PHP_SELF'], 'manager-dashboard.php') == TRUE): ?>
+    <?php elseif ($userRole == 'manager'): ?>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./index.php">DASHBOARD</a>
@@ -29,7 +36,7 @@
     </div>
 
     <!-- Designer Dashboard header panel --------------------------------------------------------------------------------------------->
-    <?php elseif (strpos($_SERVER['PHP_SELF'], 'designer-dashboard.php') == TRUE): ?>
+    <?php elseif ($userRole == 'designer'): ?>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./index.php">DASHBOARD</a>
@@ -44,13 +51,26 @@
     <!-- Visitor and User Dashboard header panel ------------------------------------------------------------------------------------->
     <?php else: ?>
     <!-- Navigation Panel Buttons -->
-    <nav class="navbar">
-        <a href="./index.php">HOME</a>
-        <a href="./src/views/gallery.php">GALLERY</a>
-        <a href="./src/views/services.php">SERVICES</a>
-        <a href="./src/views/about.php">ABOUT</a>
-        <a href="./src/views/contact.php">CONTACT</a>
-    </nav>
+        <?php
+        if ($currentPage == 'home.php'): ?>
+            <nav class="navbar">
+                <a href="#" onclick="scrollToSection(event, 'home')">HOME</a>
+                <a href="#" onclick="scrollToSection(event, 'gallery')">GALLERY</a>
+                <a href="#" onclick="scrollToSection(event, 'services')">SERVICES</a>
+                <a href="#" onclick="scrollToSection(event, 'about')">ABOUT</a>
+                <a href="#" onclick="scrollToSection(event, 'contact')">CONTACT</a>
+            </nav>
+        <?php
+        else: ?>
+            <nav class="navbar">
+                <a href="./index.php">HOME</a>
+                <a href="./index.php#gallery">GALLERY</a>
+                <a href="./index.php#services">SERVICES</a>
+                <a href="./index.php#about">ABOUT</a>
+                <a href="./index.php#contact">CONTACT</a>
+            </nav>
+        <?php endif; ?>
+
     <!-- Login image -->
     <div class="login-button">
         <a class="openPopup">SIGN IN</a>

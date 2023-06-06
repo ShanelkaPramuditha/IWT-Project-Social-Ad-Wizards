@@ -10,7 +10,7 @@ require_once '../config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo BASE_URL; ?>">
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
-    <title>Home</title>
+    <title>Social Ad Wizards</title>
     <!-- Import Style Sheets -->
     <!-- <link rel="stylesheet" href=""> -->
     <!-- Page styles --> 
@@ -21,23 +21,51 @@ require_once '../config/config.php';
     <!-- open Navigation bar with PHP -->
     <?php include_once '../components/header.php'; ?>
 
-    <div>
-        <h1>Index in PHP</h1>
-    </div>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
-    <h1>test</h1></br>
+    <section id="home">
+        <div>
+            <h1>Index in PHP</h1>
+        </div>
+
+        
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+        <h1>test</h1></br>
+    </section>
+
+    <hr>
+
+    <section id="gallery">
+        <?php require_once './gallery.php'; ?>
+    </section>
+
+    <hr>
+
+    <section id="services">
+        <?php require_once './services.php'; ?>
+    </section>
+
+    <hr>
+
+    <section id="about">
+        <?php require_once './about.php'; ?>
+    </section>
+
+    <hr>
+    
+    <section id="contact">
+        <?php require_once './contact.php'; ?>
+    </section>
 
     <?php include_once '../components/footer.php'; ?>
 </body>
