@@ -1,14 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!-- Import config file -->
+<?php
+require_once '../../config/config.php';
+?>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../../css/dashboard-admin.css">
-    <title>Admin Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
+    <title>Home</title>
+    <!-- Page styles --> 
+    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
 </head>
 
 <body>
-    <!-- Navigation panel with PHP -->
-
+    <!-- open Navigation bar with PHP -->
+    <?php include_once '../../components/header.php'; ?>
 
 <div>
     <h1>Admin Dashboard</h1>
@@ -16,7 +25,7 @@
 
 <a href="signup-staff.php">Add a New Staff Account</a>
 
-<div class="container">
+<div class="table-container">
     <h1 class="center">Staff User Board</h1>
     <table class="data-table">
         <tr>
@@ -59,7 +68,7 @@
     </table>
 </div>
 
-<div class="container">
+<div class="table-container">
     <h1 class="center">Registered User Board</h1>
     <a href=#>Export to excel</a>
     <table class="data-table">
@@ -99,7 +108,7 @@
     </table>
 </div>
 
-<!-- Footer with PHP -->
-<?php include 'footer.php' ?>
+    <!-- Footer with PHP -->
+    <?php include_once '../../components/footer.php'; ?>
 </body>
 </html>

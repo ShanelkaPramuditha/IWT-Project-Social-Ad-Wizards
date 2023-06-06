@@ -1,12 +1,16 @@
 @import "styles.css";
+@import 'header.css';
+@import 'footer.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
-.container {
+.table-container {
     height:100%;
+    width: 99%;
     background-color:LightGray;
 }
 
 .data-table {
-    width: 99%;
+    width: 98%;
     border: 1px solid #000000;
     border-collapse: collapse;
 }

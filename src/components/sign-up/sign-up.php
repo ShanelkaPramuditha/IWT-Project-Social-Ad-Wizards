@@ -21,8 +21,6 @@ require_once '../../config/config.php';
     <base href="<?php echo BASE_URL; ?>">
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Home</title>
-    <!-- Import Style Sheets -->
-    <!-- <link rel="stylesheet" href=""> -->
     <!-- Page styles --> 
     <link rel="stylesheet" type="text/css" href="./src/css/home.css">
 </head>

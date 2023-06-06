@@ -6,7 +6,7 @@
         <h4>ABOUT US</h4>
         <ul>
           <li>We also work on creating advertisements for display on social media. Our designers will work to make your ads as appealing as you want them to be.</li>
-          <li><a href="dashboard-admin.php">See more...</a></li>
+          <li><a href="./src/views/admin/dashboard-admin.php">See more...</a></li>
         </ul>
       </div>  
       <div class="footer-col">
