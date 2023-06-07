@@ -2,7 +2,7 @@
 // Check and get the form data
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $user_pass = $_POST['password'];
 
     // Connect to the database
     include '../../config/database/connection.php';
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result -> fetch_assoc();
 
         // check input values with database
-        if (($row['email'] === $email) || ($row['user_pass'] === $password)) {
+        if (($row['email'] === $email) && ($row['user_pass'] === $user_pass)) {
             // login successfully
             session_start ();
             $_SESSION['isLoggedIn'] = TRUE;

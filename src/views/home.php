@@ -25,6 +25,12 @@ require_once '../config/config.php';
         <div>
             <h1>Index in PHP</h1>
         </div>
+        <?php
+session_start();
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true && $_SESSION['user_role'] === 'user') {
+    echo "<h1>Welcome, logged-in user!</h1>";
+}
+?>
 
         
         <h1>test</h1></br>

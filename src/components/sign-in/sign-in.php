@@ -4,8 +4,8 @@
   <div id="popupContent">
     <h3>Sign In</h3>
     <form id="signInForm" action="./src/config/form/sign-in-action.php" method="POST" novalidate>
-      <label for="email">E-mail / Username</label>
-      <input type="text" id="email" name="email" placeholder="Enter your username" required autocapitalize="off">
+      <label for="email">E-mail</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email" required>
       
       <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" required>
