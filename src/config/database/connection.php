@@ -5,7 +5,7 @@
         $password = '';
         $dbname = 'social_ad_wizards';  //this our common database name.
     
-        // create a connction
+        // create a connection
         $conn = new mysqli($servername, $username, $password, $dbname);
     
         // check the connection
