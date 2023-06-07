@@ -1,11 +1,11 @@
-*{
+#services *{
     background-color:rgb(175, 211, 226); 
  }
   .he{
     text-align: center;
     font-family: "Times New Roman", Times, serif;
   }
-div
+#services div
 {
 text-align:center;
   font-size: 10px;
@@ -16,7 +16,7 @@ text-align:center;
   font-size: 30px; 
 }
 
-.one
+#services .one
 {
 background-color:rgb(175, 211, 226);
 font-size:x-large;
@@ -27,14 +27,14 @@ font-size:x-large;
   font-family: Arial, sans-serif;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-.one img{
+#services .one img{
 
 width: 200px;
 height: 200px;
 border-radius: 50%;
 
 }
-.h２{
+#services .h２{
 text-align: center;
 }
 .two
@@ -50,12 +50,12 @@ font-size: x-large;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 
 }
-.two img{
+#services .two img{
 width: 200px;
 height: 200px;
 border-radius: 70%;
 }
-.three
+#services .three
 {
 background-color: rgb(175, 211, 226);
   font-size:x-large;  
@@ -66,7 +66,7 @@ background-color: rgb(175, 211, 226);
   font-family: Arial, sans-serif;
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-.three img{
+#services .three img{
 width: 200px;
 height: 200px;
 border-radius: 50%;

@@ -1,27 +1,25 @@
-@import 'header.css';
-@import 'footer.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
 
 
 /* Global Styles */
-body {
+/* body {
     margin: 0;
     font-family: Arial, sans-serif;
-  }
+  } */
   
-  .background {
+#about .background {
     background-color: #f2f2f2;
     padding: 20px;
   }
   
-  .container {
+#about .container {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
   }
   
-  .container p {
+#about .container p {
     margin-bottom: 10px;
   }
   
@@ -32,7 +30,7 @@ body {
   /* Import and customize the styles from ./src/css/footer.css */
   
   /* Page-specific Styles */
-  form {
+#about form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
@@ -41,23 +39,23 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  form h3 {
+#about form h3 {
     font-size: 24px;
     margin-bottom: 10px;
   }
   
-  form p {
+#about form p {
     font-size: 18px;
     line-height: 1.5;
   }
   
   /* Media Queries */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .container {
       max-width: 100%;
       padding: 0 20px;
     }
-  }
+  } */
   
   /* Add any additional styles as needed */
   
