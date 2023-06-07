@@ -11,8 +11,6 @@ require_once '../config/config.php';
     <base href="<?php echo BASE_URL; ?>">
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Social Ad Wizards</title>
-    <!-- Import Style Sheets -->
-    <!-- <link rel="stylesheet" href=""> -->
     <!-- Page styles --> 
     <link rel="stylesheet" type="text/css" href="./src/css/home.css">
 </head>
@@ -22,15 +20,24 @@ require_once '../config/config.php';
     <?php include_once '../components/header.php'; ?>
 
     <section id="home">
-        <div>
-            <h1>Index in PHP</h1>
+        <div class="main-container">
+            <div class="left">
+                <h1>Your Best Advertisement</h1>
+                <p>Unlock the potential of your brand with our social advertising platform. Our cutting-edge tools and strategies ensure that your business reaches its target audience effectively, maximizing conversions. Discover the power of Your Best Advertisement today.</p>
+                <a href="./src/views/place-order.php" class="hire-us-btn">HIRE US...</a>
+
+            </div>
+            <div id="img-slider">
+                <?php include_once '../components/image-slider/image-slider.php'; ?>
+            </div>
         </div>
+        <!-- 
         <?php
         session_start();
-        if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true && $_SESSION['user_role'] === 'user') {
+        if (isset($_SESSION['isLoggedIn']) && ($_SESSION['isLoggedIn'] === true) && ($_SESSION['user_role'] === 'user')) {
             echo "<h1>Welcome, logged-in user!</h1>";
         }
-        ?>
+        ?> -->
 
         
         <h1>test</h1></br>
