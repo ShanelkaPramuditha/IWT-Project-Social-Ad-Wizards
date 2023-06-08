@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:assets/css/faq-manager.css
 button{
     background-color: aqua;
     margin-top: 30px;
@@ -7,6 +8,10 @@ button{
     border-radius: 10px;
 }
 
+=======
+@import 'header.css';
+@import 'footer.css';
+>>>>>>> Stashed changes:src/css/faq-manager.css
 button:hover
 {
     background-color: red;
@@ -21,4 +26,12 @@ table
     background-color: bisque;
 }
 
+<<<<<<< Updated upstream:assets/css/faq-manager.css
+=======
+td a
+{
+    text-align: none;
+}
+
+>>>>>>> Stashed changes:src/css/faq-manager.css
 
