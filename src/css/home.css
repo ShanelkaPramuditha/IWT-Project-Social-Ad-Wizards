@@ -23,7 +23,7 @@ section {
     /* position: static; */
     display: flex;
     background-color: rgb(224, 223, 223);
-    height: calc(100vh - 120px);
+    height: calc(100vh - 180px);
     padding: 20px;
     border: 10px solid white;
     border-top-left-radius: 20px;

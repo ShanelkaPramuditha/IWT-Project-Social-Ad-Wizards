@@ -27,10 +27,6 @@ require_once '../../config/config.php';
     <!-- open Navigation bar with PHP -->
     <?php include_once '../../components/header.php'; ?>
 
-<div>
-    <h1>Admin Dashboard</h1>
-</div>
-
 <a href="./src/views/admin/signup-staff.php">Add a New Staff Account</a>
 
 <div class="table-container">
@@ -48,7 +44,7 @@ require_once '../../config/config.php';
         include '../../config/database/connection.php';
 
         // SQL query to fetch data from the "users" table
-        $sql = "SELECT first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'manager' OR user_role = 'designer'";
+        $sql = "SELECT s_user_id, first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'manager' OR user_role = 'designer'";
 
         // Execute the query
         $result = $conn -> query($sql);
@@ -62,7 +58,7 @@ require_once '../../config/config.php';
                     echo "<td>" . $row["first_name"] . " " . $row["last_name"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
                     echo "<td>" . $row["user_role"] . "</td>";
-                    echo '<td class="cell-button"><button>Edit</button></td>';
+                    echo '<td class="edit-btn"><a href="./src/views/admin/edit-user.php?s_user_id=' . $row['s_user_id'] . '">Edit</a></td>';
                 echo "</tr>";
             }
         } else {
@@ -89,7 +85,7 @@ require_once '../../config/config.php';
 
         <?php
         // SQL query to fetch data from the "users" table
-        $sql = "SELECT first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'user'";
+        $sql = "SELECT s_user_id, first_name, last_name, email, user_role, profile_picture FROM registered_users WHERE user_role = 'user'";
 
         // Execute the query
         $result = $conn -> query($sql);
@@ -102,7 +98,7 @@ require_once '../../config/config.php';
                     echo '<td><img src="' . $row["profile_picture"] . '" width="50" height="50"></td>';
                     echo "<td>" . $row["first_name"] . " " . $row["last_name"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
-                    echo '<td class="cell-button"><button>Edit</button></td>';
+                    echo '<td class="edit-btn"><a href="./edit-user.php?s_user_id=' . $row["s_user_id"] . '">Edit</a></td>';
                 echo "</tr>";
             }
         } else {

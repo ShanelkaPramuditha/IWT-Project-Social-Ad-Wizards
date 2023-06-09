@@ -25,6 +25,16 @@
     transform: translate(-50%, -50%);
 }
 
+.subheader-name {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(255, 50, 50);
+    font-size: 25px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .header-logo {
     display: inline;
     float: left;

@@ -1,70 +1,61 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.footer {
+  background-color: #f2f2f2;
+  padding: 30px;
 }
-body{
-  font-family: sans-serif;
-}
-.container{
-  max-width: 1170px;
-  margin: auto;
-}
-.footer{
-  background: #399ede;
-  padding: 70px;
-}
-.row{
+
+.footer .row {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.footer-col{
-  width: 25%;
+
+.footer-col {
+  flex-basis: 25%;
   padding: 0 15px;
-
-}
-.footer-col h4{
-  font-size: 18px;
-  color: rgb(31, 85, 133);
-  margin-bottom: 25px;
-  font-weight: 500;
   position: relative;
-
 }
-.footer-col h4::before{
-  content: '';
+
+.footer-col:not(:last-child)::after {
+  content: "";
   position: absolute;
-  left: 0;
-  bottom: -10px;
-  background:#0a3e66;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background-color: #ccc;
 }
-.footer-col ul{
-  list-style: none;
-}
-.footer-col ul p{
-  font-size: 16px;
-  text-decoration: none;
-  color: white;
-  display: block;
 
+.footer-col h4 {
+  text-align: center;
+  margin-bottom: 10px;
 }
-.footer-col li{
-  font-size: 16px;
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #555;
   text-decoration: none;
-  color: white;
-  display: block;
 }
+
+.social-link a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #555;
+  text-decoration: none;
+}
+
+/* Style the font awesome icons */
 .fa {
-  padding: 18px;
-  font-size: 30px;
-  width: 20px;
-  text-align:left;
+  padding: 8px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
   text-decoration: none;
+  border-radius: 50%;
 }
 
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
