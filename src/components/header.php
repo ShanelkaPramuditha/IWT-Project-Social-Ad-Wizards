@@ -34,6 +34,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/manager/dashboard-manager.php">DASHBOARD</a>
+        <a href="./src/views/manager/offer-manage.php">OFFER</a>
         <a href="./src/views/manager/faq-manage.php">FAQ</a>
     </nav>
     <!-- Login image -->
@@ -101,7 +102,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
 
-$pageNames_1 = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php', 'dashboard-manager.php', 'faq-manager.php'];
+$pageNames_1 = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php', 'dashboard-manager.php', 'faq-manage.php', 'offer-manage.php'];
 // $pageNames2 = ['dashboard-admin.php']
 $matchStatus = FALSE;
 

@@ -12,7 +12,6 @@ CRUD Info
 
 ✔   D - Delete accounts from the system.
 
-
 ## CRUD 02 :
 
 ✔   C - Add items to the sample gallery.
@@ -22,7 +21,6 @@ CRUD Info
 ✔   U - Update sample gallery items and title.
 
 ✔   D - Delete items from the sample gallery.
-
 
 ## CRUD 03 :
 
@@ -34,7 +32,6 @@ CRUD Info
 
 ✖   D - Delete questions and answers from the FAQ table.
 
-
 ## CRUD 04 :
 
 ✖   C - Place the order and add to the orders table.
@@ -45,13 +42,12 @@ CRUD Info
 
 ✖   D - Cancellation of the order if the customer requests to cancel the order.
 
-
 ## CRUD 05 :
 
-✖   C - Create an offer.
+✔   C - Create an offer.
 
 ✖   R - Read available offers while the placing order.
 
-✖   U - If manager want to update the offer, manager can it.
+✔   U - If manager want to update the offer, manager can it.
 
-✖   D - Manager can cancel the available offers with deletion.
+✔   D - Manager can cancel the available offers with deletion.
