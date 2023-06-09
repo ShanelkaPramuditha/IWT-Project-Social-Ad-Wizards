@@ -28,6 +28,88 @@ VALUES
 	(DEFAULT, 'test6@123', 'testuser6@gmail.com', 'Female', '1997-08-25', 'David', 'Wilson', '0773334444', 'user'),
 	(DEFAULT, 'test7@123', 'testuser7@gmail.com', 'Male', '2000-02-17', 'Sophia', 'Taylor', '0775556666', 'user');
 
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 09, 2023 at 01:05 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `social_ad_wizards`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `g_id` int(11) NOT NULL,
+  `g_title` varchar(50) NOT NULL,
+  `g_link` varchar(300) NOT NULL,
+  `g_review` int(11) NOT NULL DEFAULT 0,
+  `s_user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`g_id`, `g_title`, `g_link`, `g_review`, `s_user_id`) VALUES
+(6, 'Item 4', './assets/images/uploads/gallery/gallery4.jpg', 0, 4),
+(7, 'Item 5', './assets/images/uploads/gallery/gallery5.jpg', 0, 4),
+(8, 'Item 6', './assets/images/uploads/gallery/gallery6.jpg', 0, 4),
+(16, 'ddd', './assets/images/uploads/gallery/6482fdc3e050e_pexels-laraine-davis-1580025(1).jpg', 0, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`g_id`),
+  ADD KEY `fk_gallery` (`s_user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD CONSTRAINT `fk_gallery` FOREIGN KEY (`s_user_id`) REFERENCES `registered_users` (`s_user_id`) ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 -- create faq data table
