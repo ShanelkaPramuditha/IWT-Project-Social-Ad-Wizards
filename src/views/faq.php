@@ -65,6 +65,21 @@ require_once '../config/config.php';
       <p>No, to run Instagram ads, you need to have an active Instagram account connected to a Facebook Page. Our team can assist you in setting up and managing your Instagram advertising account.</p>
     </div>
   </div>
+
+  <div class="al">	
+
+<!--form creation-->
+<form method="POST" action="config.php" class="i">
+<center>Question :
+<input type ="text" name="name"  placeholder="  Ask your Question...." size="100"></center>
+<br>
+<br>
+<center><input type="submit" class ="button"value="SEND"></center>
+
+
+</form>
+    </div>
+</div>
     <!-- Footer bar with PHP -->
     <?php include_once '../components/footer.php' ?>
 </body>

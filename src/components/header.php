@@ -34,6 +34,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/manager/dashboard-manager.php">DASHBOARD</a>
+        <a href="./src/views/manager/faq-manager.php">FAQ</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
@@ -99,6 +100,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <!-- Include log in popup -->
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
+
 $pageNames = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php'];
 // $pageNames2 = ['dashboard-admin.php']
 
