@@ -15,7 +15,7 @@ CRUD 02 :
 ✔   D - Delete items from the sample gallery.
 
 CRUD 03 :
-✖   C - Add FAQ questions and answers.
+✖   C - Ask, Add FAQ questions and answers.
 ✖   R - Read and display questions and answers.
 ✖   U - Update previous questions and answers.
 ✖   D - Delete questions and answers from the FAQ table.

@@ -34,7 +34,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/manager/dashboard-manager.php">DASHBOARD</a>
-        <a href="./src/views/manager/faq-manager.php">FAQ</a>
+        <a href="./src/views/manager/faq-manage.php">FAQ</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
@@ -101,16 +101,19 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
 
-$pageNames = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php'];
+$pageNames_1 = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php', 'dashboard-manager.php', 'faq-manager.php'];
 // $pageNames2 = ['dashboard-admin.php']
+$matchStatus = FALSE;
 
-foreach ($pageNames as $pageName) {
+foreach ($pageNames_1 as $pageName) {
     if (strpos ($currentPage, $pageName) !== FALSE) {
         include_once '../../components/sign-in/sign-in.php';
+        $matchStatus = TRUE;
         break;
     }
-    else {
-        include_once '../components/sign-in/sign-in.php';
-    }
 }
+if (!$matchStatus) {
+    include_once '../components/sign-in/sign-in.php';
+}
+
 ?>
