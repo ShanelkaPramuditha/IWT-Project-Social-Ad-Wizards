@@ -91,8 +91,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     <!-- Search bar -->
     <div class="search-notify">
-        <input type="text" placeholder="Search..">
-        <a href="#"><img src="./assets/images/site-img/icons/search.png"></a>
+        <form method="GET" action="./src/views/search.php">
+            <input type="text" name="search" placeholder="Search..">
+            <a href="./src/views/search.php" type="submit"><img src="./assets/images/site-img/icons/search.png"></a>
+        </form>
         <a href="#"><img src="./assets/images/site-img/icons/notify-animate.gif"></a>
     </div>
 

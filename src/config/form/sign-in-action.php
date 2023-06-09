@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Connect to the database
     include '../../config/database/connection.php';
 
-    $sql = "SELECT email, user_pass, user_role FROM registered_users WHERE email = ? LIMIT 1";
+    $sql = "SELECT s_user_id, email, user_pass, user_role FROM registered_users WHERE email = ? LIMIT 1";
     $stmt = $conn -> prepare ($sql);
     $stmt -> bind_param ('s', $email);
     $stmt -> execute ();
@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['isLoggedIn'] = TRUE;
             $_SESSION['email'] = $row['email'];
             $_SESSION['user_role'] = $row['user_role'];
+            $_SESSION['s_user_id'] = $row['s_user_id'];
+            $_SESSION['first_name'] = $row['first_name'];
 
             if ($row['user_role'] === 'admin') {
                 header('Location: ../../views/admin/dashboard-admin.php');

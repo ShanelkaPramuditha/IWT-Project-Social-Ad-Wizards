@@ -1,11 +1,11 @@
-@import 'header.css';
-@import 'footer.css';
-@import 'gallery.css';
-@import 'services.css';
-@import 'about.css';
-@import 'contact.css';
+@import url('header.css');
+@import url('footer.css');
+@import url('gallery.css');
+@import url('services.css');
+@import url('about.css');
+@import url('contact.css');
 
-@import 'image-slider.css';
+@import url('image-slider.css');
 
 /* Add space for the fixed header */
 body {
