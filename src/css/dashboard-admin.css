@@ -1,0 +1,59 @@
+@import 'header.css';
+@import 'footer.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+
+body {
+    margin-top: 120px;
+}
+
+/* .table-container {
+    height:100%;
+    width: 99%;
+    padding: 10px;
+    background-color:LightGray;
+}
+
+.data-table {
+    width: 98%;
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+.data-table th, td {
+    border: 1px solid #000000;
+}
+
+button {
+    width: 150px;
+    height: 20px;
+    left: 1000px;
+    top: 90px;
+} */
+
+.table-container {
+    width: 100%;
+    margin-bottom: 20px;
+    border: #ff0000 solid 1px;
+    border-color: #ff0000;
+    background-color: #acacac;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}

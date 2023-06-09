@@ -22,10 +22,10 @@ INSERT INTO `registered_users` (`profile_picture`, `user_pass`, `email`, `gender
 VALUES
 	(DEFAULT, 'admin', 'admin@gmail.com', 'Male', '2000-05-01', 'Ftest', 'Ltest', '0771237653', 'admin'),
 	('uploads/profile-pictures/user2.jpg', 'designer', 'designer@gmail.com', 'Female', '2001-06-12', 'John', 'Doe', '0771234567', 'designer'),
-	('uploads/profile-pictures/user3.jpg', 'test3@123', 'testuser3@gmail.com', 'Male', '1998-09-21', 'Jane', 'Smith', '0779876543', 'user'),
+	('uploads/profile-pictures/user3.jpg', 'user', 'user@gmail.com', 'Male', '1998-09-21', 'Jane', 'Smith', '0779876543', 'user'),
 	(DEFAULT, 'manager', 'manager@gmail.com', 'Female', '1995-03-15', 'Michael', 'Johnson', '0777654321', 'manager'),
 	('uploads/profile-pictures/user4.jpg', 'test5@123', 'testuser5@gmail.com', 'Male', '2002-11-07', 'Emily', 'Anderson', '0771112222', 'user'),
-	(DEFAULT, 'test6@123', 'user@gmail.com', 'Female', '1997-08-25', 'David', 'Wilson', '0773334444', 'user'),
+	(DEFAULT, 'test6@123', 'testuser6@gmail.com', 'Female', '1997-08-25', 'David', 'Wilson', '0773334444', 'user'),
 	(DEFAULT, 'test7@123', 'testuser7@gmail.com', 'Male', '2000-02-17', 'Sophia', 'Taylor', '0775556666', 'user');
 
 

@@ -13,6 +13,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     <!-- Admin dashboard header panel ------------------------------------------------------------------------------------------------>
     <?php if ($userRole == 'admin'): ?>
+    <div>
+        <h2 class="subheader-name">ADMIN DASHBOARD</h2>
+    </div>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/admin/dashboard-admin.php">DASHBOARD</a>
@@ -25,6 +28,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     <!-- Manager Dashboard header panel ---------------------------------------------------------------------------------------------->
     <?php elseif ($userRole == 'manager'): ?>
+    <div>
+        <h2 class="subheader-name">MANAGER DASHBOARD</h2>
+    </div>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
         <a href="./src/views/manager/dashboard-manager.php">DASHBOARD</a>
@@ -38,10 +44,13 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 
     <!-- Designer Dashboard header panel --------------------------------------------------------------------------------------------->
     <?php elseif ($userRole == 'designer'): ?>
+    <div>
+        <h2 class="subheader-name">DESIGNER DASHBOARD</h2>
+    </div>
     <!-- Navigation Panel Buttons -->
     <nav class="navbar">
-        <a href="./src/views/admin/dashboard-designer.php">DASHBOARD</a>
-        <a href="./src/views/gallery.php">GALLERY</a>
+        <a href="./src/views/designer/dashboard-designer.php">DASHBOARD</a>
+        <a href="./src/views/designer/manage-gallery.php">GALLERY</a>
     </nav>
     <!-- Login image -->
     <div class="login-button">
@@ -92,9 +101,16 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <?php
 $currentPage = $_SERVER['PHP_SELF'];
 
-if ((strpos ($currentPage, 'dashboard-admin.php') !== FALSE) || (strpos($currentPage, 'signup-staff.php') !== FALSE) || (strpos ($currentPage, 'dashboard-manager.php') !== FALSE)) {
-    include_once '../../components/sign-in/sign-in.php';
-} elseif (strpos($currentPage, 'dashboard-admin.php') !== TRUE) {
-    include_once '../components/sign-in/sign-in.php';
+$pageNames = ['dashboard-admin.php', 'signup-staff.php', 'dashboard-designer.php'];
+// $pageNames2 = ['dashboard-admin.php']
+
+foreach ($pageNames as $pageName) {
+    if (strpos ($currentPage, $pageName) !== FALSE) {
+        include_once '../../components/sign-in/sign-in.php';
+        break;
+    }
+    else {
+        include_once '../components/sign-in/sign-in.php';
+    }
 }
 ?>
