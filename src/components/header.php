@@ -93,7 +93,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <div class="search-notify">
         <form method="GET" action="./src/views/search.php">
             <input type="text" name="search" placeholder="Search..">
-            <a href="./src/views/search.php" type="submit"><img src="./assets/images/site-img/icons/search.png"></a>
+            <button type="submit"><img src="./assets/images/site-img/icons/search.png" alt="Search"></button>
+        </form>
         </form>
         <a href="#"><img src="./assets/images/site-img/icons/notify-animate.gif"></a>
     </div>
