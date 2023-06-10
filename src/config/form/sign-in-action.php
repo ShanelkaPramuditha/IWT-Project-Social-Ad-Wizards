@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result -> fetch_assoc();
 
         // check input values with database
-        if (($row['email'] === $email) && ($row['user_pass'] === $user_pass)) {
+        if (($row['email'] === $email) && (password_verify($user_pass, $row['user_pass']))) {
             // login successfully
             session_start ();
             $_SESSION['isLoggedIn'] = TRUE;
@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_role'] = $row['user_role'];
             $_SESSION['s_user_id'] = $row['s_user_id'];
             $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['profile_picture'] = $row['profile_picture'];
 
             if ($row['user_role'] === 'admin') {
                 header('Location: ../../views/admin/dashboard-admin.php');

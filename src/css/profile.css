@@ -1,0 +1,51 @@
+/* Import Header and Footer Styles */
+@import url('./header.css');
+@import url('./footer.css');
+
+/* CSS Styling for Profile Page */
+
+body {
+  margin-top: 120px;
+}
+
+h1 {
+   text-align: center;
+ }
+ 
+ .profile-container {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+ }
+ 
+ .profile-container img {
+   display: block;
+   margin: 0 auto;
+   margin-bottom: 20px;
+   border-radius: 50%;
+ }
+ 
+ .profile-container p {
+   margin-bottom: 10px;
+ }
+ 
+ .edit-profile-button {
+   display: block;
+   width: 200px;
+   margin: 20px auto;
+   padding: 10px;
+   text-align: center;
+   color: #fff;
+   background-color: #007bff;
+   border: none;
+   border-radius: 5px;
+   text-decoration: none;
+ }
+ 
+ .edit-profile-button:hover {
+   background-color: #0056b3;
+ }
+ 

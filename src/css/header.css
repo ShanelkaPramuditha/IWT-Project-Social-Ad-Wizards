@@ -1,4 +1,4 @@
-@import 'sign-in.css';
+@import url('sign-in.css');
 
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
@@ -91,8 +91,9 @@
 }
 
 .search-notify input {
+    flex: 1;
     padding: 8px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     border-radius: 4px 4px 4px 4px;
     outline: none;
 }
@@ -102,10 +103,17 @@
     padding: 4px;
     border-radius: 4px 4px 4px 4px;
     margin-left: -1px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
-    width: 33px;
-    height: 33px;
-    vertical-align: middle;
+    width: 24px;
+    height: 24px;
     margin-left: 4px;
+}
+
+.search-notify button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    vertical-align: middle;
 }

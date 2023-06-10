@@ -46,7 +46,7 @@ CRUD Info
 
 ✔   C - Create an offer.
 
-✖   R - Read available offers while the placing order.
+✔   R - Read available offers while the placing order.
 
 ✔   U - If manager want to update the offer, manager can it.
 

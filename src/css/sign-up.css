@@ -1,102 +1,90 @@
-* {
-  box-sizing: border-box;
-}
+@import url('header.css');
+@import url('footer.css');
 
 body {
-  background-color: #1d7ee5;
+  margin-top: 120px;
+}
+
+
+
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  border: 20px solid transparent;
 }
 
-.form {
-  width: 500px;
-  background-color: rgba(255, 255, 255, 0.13);
-  border-radius: 10px;
-  padding: 50px;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  backdrop-filter: blur(10px);
+.form form {
+  width: 70%;
+  max-width: 100%;
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form h3 {
   text-align: center;
-  font-size: 24px;
-  color: #fff;
   margin-bottom: 30px;
+  margin-top: 5px;
+  font-size: 50px;
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
-.form-row label {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 5px;
-}
-
-.form-row input,
-.form-row select {
-  width: 100%;
-  height: 40px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.07);
-  color: #fff;
-  font-size: 14px;
-}
-
-.form-row .input_field {
+.input_field {
+  flex-basis: calc(47% - 10px);
   position: relative;
 }
 
-.form-row .input_field span {
+.input_field input,
+.input_field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input_field span {
   position: absolute;
   top: 50%;
-  left: 15px;
+  left: 10px;
   transform: translateY(-50%);
-  color: #fff;
+  color: #792424;
 }
 
-.form-row .input_field input {
-  padding-left: 40px;
+.input_field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
 }
 
-.form-row .input_field i {
-  margin-right: 4px;
+.agree {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.form-row .agree label {
-  font-size: 14px;
-}
-
-.submit-btn {
-  display: flex;
-  justify-content: center;
+.agree label {
+  font-size: 12px;
 }
 
 .button {
-  margin-top: 50px;
-width: 100%;
-background-color: #ffffff;
-padding: 15px 0;
-font-size: 18px;
-font-weight: 600;
-border-radius: 1px;
-cursor: pointer;
-border-radius: 8px;
-border: 0;
-}
-.agree {
-display: flex;
-align-items: flex-start;
-size:5px ;
-color: #fff;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }

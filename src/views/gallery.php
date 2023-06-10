@@ -1,10 +1,11 @@
 <!-- gallery.php -->
 
 <?php
+session_start();
 // Include the database connection
 include '../config/database/connection.php';
 
-// Prepare the SQL query to retrieve the highest ranking first 6 images
+// Prepare the SQL query to retrieve the highest ranking first 9 images
 $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review DESC LIMIT 9";
 $result = mysqli_query($conn, $query);
 
@@ -23,7 +24,9 @@ if (mysqli_num_rows($result) > 0) {
         echo '<img src="' . $g_link . '" alt="Image">';
         echo '</a>';
         echo '<div class="desc">' . $g_title . '</div>';
-        echo '<div class="edit-button"><a href="./src/views/designer/edit.php?id=' . $g_id . '">Edit</a></div>';
+        if ($_SESSION['user_role'] === 'designer') {
+            echo '<div class="edit-button"><a href="./src/views/designer/edit.php?id=' . $g_id . '">Edit</a></div>';
+        }
         echo '</div>';
         echo '</div>';
     }

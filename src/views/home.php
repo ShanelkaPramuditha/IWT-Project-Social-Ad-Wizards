@@ -26,7 +26,10 @@ require_once '../config/config.php';
                 <p>Unlock the potential of your brand with our social advertising platform. Our cutting-edge tools and strategies ensure that your business reaches its target audience effectively, maximizing conversions. Discover the power of Your Best Advertisement today.</p>
                 <?php
                 // Check if the user is logged in
-                session_start();
+                // Start the session if it has not been started
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
                 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
                     // User is logged in
                     echo '<a href="./src/views/order.php"><button class="hire-us-btn openPopup">PLACE ORDER...</button></a>';
@@ -43,7 +46,10 @@ require_once '../config/config.php';
         </div>
         <!-- 
         <?php
-        session_start();
+        // Start the session if it has not been started
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         if (isset($_SESSION['isLoggedIn']) && ($_SESSION['isLoggedIn'] === true) && ($_SESSION['user_role'] === 'user')) {
             echo "<h1>Welcome, logged-in user!</h1>";
         }

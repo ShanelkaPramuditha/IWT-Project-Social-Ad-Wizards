@@ -10,10 +10,10 @@
       <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-      <div class="remember-me">
+      <!-- <div class="remember-me">
         <input type="checkbox" id="rememberMe">
         <label for="rememberMe">Remember Me</label>
-      </div>
+      </div> -->
       
       <button type="submit">Sign In</button>
     </form>
