@@ -31,6 +31,10 @@ require_once '../../config/config.php';
     <h1>Manager Dashboard</h1>
 </div>
 
+<section class="manage-order">
+    <?php include ('./manage-order.php'); ?>
+</section>
+
     <!-- Footer with PHP -->
     <?php include_once '../../components/footer.php'; ?>
     

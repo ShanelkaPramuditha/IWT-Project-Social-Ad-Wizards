@@ -24,7 +24,17 @@ require_once '../config/config.php';
             <div class="left">
                 <h1>Your Best Advertisement</h1>
                 <p>Unlock the potential of your brand with our social advertising platform. Our cutting-edge tools and strategies ensure that your business reaches its target audience effectively, maximizing conversions. Discover the power of Your Best Advertisement today.</p>
-                <a href="./src/views/place-order.php" class="hire-us-btn">HIRE US...</a>
+                <?php
+                // Check if the user is logged in
+                session_start();
+                if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
+                    // User is logged in
+                    echo '<a href="./src/views/order.php"><button class="hire-us-btn openPopup">PLACE ORDER...</button></a>';
+                } else {
+                    // User is not logged in
+                    echo '<button class="hire-us-btn openPopup">PLACE ORDER...</button>';
+                }
+                ?>
 
             </div>
             <div id="img-slider">
@@ -68,3 +78,20 @@ require_once '../config/config.php';
     <?php include_once '../components/footer.php'; ?>
 </body>
 </html>
+
+<script>
+    // Open the sign-in pop-up
+var openPopupButtons = document.getElementsByClassName("openPopup");
+for (var i = 0; i < openPopupButtons.length; i++) {
+  openPopupButtons[i].addEventListener("click", function() {
+    document.getElementById("popupOverlay").style.display = "block";
+    document.getElementById("popupContainer").style.display = "block";
+  });
+}
+
+// Close the sign-in pop-up
+document.getElementById("popupOverlay").addEventListener("click", function() {
+  document.getElementById("popupOverlay").style.display = "none";
+  document.getElementById("popupContainer").style.display = "none";
+});
+</script>
