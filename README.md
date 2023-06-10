@@ -34,9 +34,9 @@ CRUD Info
 
 ## CRUD 04 :
 
-✖   C - Place the order and add to the orders table.
+✔   C - Place the order and add to the orders table.
 
-✖   R - Views received orders.
+✔   R - Views received orders.
 
 ✖   U - Update order info before the pass the designer.
 
