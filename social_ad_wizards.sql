@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 07:16 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Generation Time: Jun 11, 2023 at 03:16 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,14 +32,22 @@ CREATE TABLE `faq` (
   `s_user_id` int(11) NOT NULL,
   `question` varchar(1000) NOT NULL,
   `answer` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `faq`
 --
 
 INSERT INTO `faq` (`faq_id`, `s_user_id`, `question`, `answer`) VALUES
-(8, 32, 'testsaaadsd hi', 'answer1ds');
+(10, 32, 'How much time is needed for ad design?', ''),
+(13, 32, 'Why should I choose Social Ad Wizard', ''),
+(14, 32, 'Can I make changes to an order I already placed', ''),
+(15, 32, 'How do I get a new password', ''),
+(16, 32, 'When will I receive my product', ''),
+(17, 32, 'How can I pay for the product', ''),
+(100, 32, 'How much time is needed for ad design?', 'At least 3 days'),
+(111, 32, 'Why should I choose Social Ad Wizard', 'Because Social Ad Wizard is a very trustfull and very user friendly compamy. So Customers can satisfied about the final product definitly'),
+(112, 1, 'Can I make changes to an order I already placed', 'No. You cannot make changes After place a order');
 
 -- --------------------------------------------------------
 
@@ -53,7 +61,7 @@ CREATE TABLE `gallery` (
   `g_link` varchar(300) NOT NULL,
   `g_review` int(11) NOT NULL DEFAULT 0,
   `s_user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `gallery`
@@ -85,14 +93,18 @@ CREATE TABLE `offer` (
   `offer_percentage` float(5,2) NOT NULL,
   `o_start_date` date NOT NULL DEFAULT current_timestamp(),
   `o_end_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offer`
 --
 
 INSERT INTO `offer` (`offer_id`, `offer_percentage`, `o_start_date`, `o_end_date`) VALUES
-(20, 33.00, '2023-06-09', '2023-06-08');
+(20, 33.00, '2023-06-09', '2023-06-08'),
+(21, 15.00, '2023-06-11', '2023-06-20'),
+(22, 2.00, '2023-06-11', '2023-06-19'),
+(23, 2.00, '2023-06-02', '2023-07-02'),
+(24, 5.00, '2023-05-10', '2023-07-10');
 
 -- --------------------------------------------------------
 
@@ -109,15 +121,18 @@ CREATE TABLE `order_info` (
   `order_desc` varchar(2000) NOT NULL,
   `category` varchar(30) DEFAULT NULL,
   `ad_format` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order_info`
 --
 
 INSERT INTO `order_info` (`order_id`, `s_user_id`, `order_date`, `order_status`, `ad_platform`, `order_desc`, `category`, `ad_format`) VALUES
+(1, 32, '2023-05-10', 'pending', 'yt', 'youtube ad', 'yt', 'png'),
 (8, 9, '2023-06-15', 'ff', 'ff', 'ff', 'ff', 'ff'),
-(9, 1, '2023-06-01', 'ss', 'ss', 'ss', 'ss', 'ss');
+(9, 1, '2023-06-01', 'ss', 'ss', 'ss', 'ss', 'ss'),
+(10, 32, '2023-05-10', 'approve', 'ff', 'facebook ad', 'fb', 'faceb'),
+(112, 1, '2023-05-10', 'approve', 'ig', 'instergram ad', 'ig', 'jpg');
 
 -- --------------------------------------------------------
 
@@ -137,7 +152,7 @@ CREATE TABLE `registered_users` (
   `profile_picture` varchar(500) DEFAULT 'assets/images/uploads/profile-pictures/default.jpg',
   `user_pass` varchar(300) NOT NULL,
   `user_role` varchar(10) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registered_users`
@@ -197,7 +212,7 @@ ALTER TABLE `registered_users`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `faq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `faq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -209,13 +224,13 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `offer`
 --
 ALTER TABLE `offer`
-  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `order_info`
 --
 ALTER TABLE `order_info`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `registered_users`
@@ -249,3 +264,7 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
