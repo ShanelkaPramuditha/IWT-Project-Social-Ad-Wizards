@@ -1,15 +1,16 @@
 <?php
-
+session_start();
 // Retrieve form data
 $name = $_POST['name'];
+$userId = $_SESSION['s_user_id'];
 
 require_once('../database/connection.php');
 
 // Insert data into the database
-$sql = "INSERT INTO faq(Question) VALUES ('$name')";
+$sql = "INSERT INTO faq(s_user_id, question) VALUES ('$userId', '$name')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Data inserted successfully";
+  header ('Location: ../../views/faq.php');
   
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;

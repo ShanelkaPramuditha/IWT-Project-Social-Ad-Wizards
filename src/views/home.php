@@ -22,7 +22,7 @@ require_once '../config/config.php';
     <section id="home">
         <div class="main-container">
             <div class="left">
-                <h1>Your Best Advertisement</h1>
+                <h1>Prepare Your Best Advertisement</h1>
                 <p>Unlock the potential of your brand with our social advertising platform. Our cutting-edge tools and strategies ensure that your business reaches its target audience effectively, maximizing conversions. Discover the power of Your Best Advertisement today.</p>
                 <?php
                 // Check if the user is logged in

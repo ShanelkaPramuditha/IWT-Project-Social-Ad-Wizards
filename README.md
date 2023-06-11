@@ -24,13 +24,13 @@ CRUD Info
 
 ## CRUD 03 :
 
-✖   C - Ask, Add FAQ questions and answers.
+✔   C - Ask, Add FAQ questions and answers.
 
-✖   R - Read and display questions and answers.
+✔   R - Read and display questions and answers.
 
-✖   U - Update previous questions and answers.
+✔   U - Update previous questions and answers.
 
-✖   D - Delete questions and answers from the FAQ table.
+✔   D - Delete questions and answers from the FAQ table.
 
 ## CRUD 04 :
 

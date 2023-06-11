@@ -89,9 +89,9 @@ body {
 .al
 {
     margin: auto;
-    width: 60%;
-    height:100px;
-    border: 3px solid #73AD21;
+    width: 80%;
+    height:200px;
+    border: 3px solid #8c9283;
     padding: 10px;
 }
 
@@ -107,4 +107,8 @@ body {
 .button:hover
 {
     background-color: black;
+}
+
+.input-box {
+  height: 100px;
 }

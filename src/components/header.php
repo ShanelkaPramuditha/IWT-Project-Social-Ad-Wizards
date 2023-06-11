@@ -9,6 +9,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 $isLoggedIn = $_SESSION['isLoggedIn'] ?? FALSE;
 // get the currently logged in user role
 $userRole = $_SESSION['user_role'] ?? 'visitor';
+// get user id
+$userId = $_SESSION['s_user_id'] ?? '0';
 ?>
 
 <!-- Header Navigation Panel -->
@@ -53,7 +55,7 @@ $userRole = $_SESSION['user_role'] ?? 'visitor';
         </nav>
         <!-- Login image -->
         <!-- <div class="login-button">
-            <a class="openPopupp" href="./src/config/log-out.php">LOG OUT - MANAGER</a>
+            <a class="openPopup" href="./src/config/log-out.php">LOG OUT - MANAGER</a>
             <a class="openPopup"><img src="./assets/images/site-img/login.png" alt="MANAGER"></a>
         </div> -->
 
@@ -126,7 +128,8 @@ $userRole = $_SESSION['user_role'] ?? 'visitor';
 $pageNames = [
             'home.php',
             'gallery-more.php',
-            'faq.php'
+            'faq.php',
+            'sign-up.php',
             ];
 //[
 //     'dashboard-admin.php',
@@ -141,7 +144,7 @@ $pageNames = [
 $matchStatus = FALSE;
 
 foreach ($pageNames as $pageName) {
-    if (strpos ($currentPage, $pageName) !== FALSE) {
+    if ($currentPage === $pageName) {
         include_once '../components/sign-in/sign-in.php';
         $matchStatus = TRUE;
         break;

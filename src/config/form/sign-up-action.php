@@ -19,6 +19,7 @@ require_once('../../config/database/connection.php');
 //         echo "Invalid email or password";
 //     }
 //}
+// Normal users sign up
 if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
@@ -28,7 +29,9 @@ if (isset($_POST['signup'])) {
     $lname = $_POST['lname'];
     $p_number = $_POST['phone_no'];
 
-    $sql = "INSERT INTO registered_users (user_pass, email, gender, date_of_birth, first_name, last_name, phone_no, user_role) VALUES ('$password', '$email', '$gender', '$dob', '$fname', '$lname', '$p_number', DEFAULT)";
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO registered_users (user_pass, email, gender, date_of_birth, first_name, last_name, phone_no, user_role) VALUES ('$hashedPassword', '$email', '$gender', '$dob', '$fname', '$lname', '$p_number', DEFAULT)";
     if ($conn->query($sql) === true) {
         // Registration successful
         $_SESSION['email'] = $email;
@@ -39,6 +42,7 @@ if (isset($_POST['signup'])) {
         echo "Error: " . $conn -> error;
     }
 }
+// staff account creation
 elseif (isset($_POST['staff-signup'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
