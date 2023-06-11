@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="assets/css/faq-manager.css" >
+  <link rel="stylesheet" type="text/css" href="assets/css/managefaq.css" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>FAQ Page</title>
 </head>
@@ -38,6 +38,8 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>" . $row["Question"] . "</td><td>";
+        echo '<td><a href="delete.php">Delete</a></td>';
+        echo '<td><a href="answer.php">Answer</a></td>';
     }
     echo "</table>";
 } else {
@@ -48,6 +50,5 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<button>Answer the question</button>
 </body>
 </html>
