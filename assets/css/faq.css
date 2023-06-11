@@ -1,0 +1,39 @@
+
+body 
+{
+    margin-top: 150px;
+    background-color:honeydew;
+}
+
+h1
+{
+    text-align: center;
+    color:red;
+    
+}
+
+.al
+{
+    margin: auto;
+    width:900px;
+    height:200px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    background-color: antiquewhite;
+    margin-top:40px;
+}
+
+.button
+{
+    background-color: #4CAF50;
+    color:aliceblue;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;;
+}
+
+.button:hover
+{
+    background-color: black;
+}
+
