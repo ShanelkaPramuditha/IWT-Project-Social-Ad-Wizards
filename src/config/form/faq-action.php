@@ -1,13 +1,13 @@
 <?php
 session_start();
 // Retrieve form data
-$name = $_POST['name'];
+$question = $_POST['question'];
 $userId = $_SESSION['s_user_id'];
 
 require_once('../database/connection.php');
 
 // Insert data into the database
-$sql = "INSERT INTO faq(s_user_id, question) VALUES ('$userId', '$name')";
+$sql = "INSERT INTO faq(s_user_id, question) VALUES ('$userId', '$question')";
 
 if ($conn->query($sql) === TRUE) {
   header ('Location: ../../views/faq.php');

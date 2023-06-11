@@ -8,7 +8,7 @@ CRUD Info
 
 ✔   R - Read and filter role and log in to the system.
 
-✔   U - Edit all account data (user, manager, designer).
+✔   U - Edit account data (user, manager, designer).
 
 ✔   D - Delete accounts from the system.
 

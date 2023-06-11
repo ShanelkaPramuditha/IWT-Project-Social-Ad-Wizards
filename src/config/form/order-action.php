@@ -1,42 +1,71 @@
 <?php
-// Include the database connection
-include '../../config/database/connection.php';
-
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve the form data
-    $s_user_id = 1;
-    $order_date = $_POST['order_date'];
-    $order_status = $_POST['order_status'];
-    $ad_platform = $_POST['ad_platform'];
-    $order_desc = $_POST['order_desc'];
-    $category = $_POST['category'];
-    $ad_format = $_POST['ad_format'];
-
-    // Prepare the INSERT statement
-    $query = "INSERT INTO order_info (s_user_id, order_date, order_status, ad_platform, order_desc, category, ad_format)
-              VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $query);
-
-    // Check if the prepared statement is successful
-    if ($stmt) {
-        // Bind the parameters with the form data
-        mysqli_stmt_bind_param($stmt, "issssss", $s_user_id, $order_date, $order_status, $ad_platform, $order_desc, $category, $ad_format);
-
-        // Execute the statement
-        if (mysqli_stmt_execute($stmt)) {
-            header ('Location: ../../../index.php?');
-        } else {
-            echo "Error executing the statement: " . mysqli_error($conn);
-        }
-
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    } else {
-        echo "Error preparing the statement: " . mysqli_error($conn);
-    }
+session_start();
+if (!isset($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'user')) {
+    header('Location: ../home.php');
+    exit;
 }
 
-// Close the database connection
-mysqli_close($conn);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Import config file
+    require_once '../../config/config.php';
+    // Import database connection
+    require_once '../../config/database/connection.php';
+
+    // Retrieve form data
+    $sUserId = $_SESSION['s_user_id'];
+    $adPlatform = $_POST['ad_platform'];
+    $orderDesc = $_POST['order_desc'];
+    $category = $_POST['category'];
+    $adFormat = $_POST['ad_format'];
+
+    // Prepare the SQL statement
+    $sql = "INSERT INTO order_info (s_user_id, ad_platform, order_desc, category, ad_format) 
+            VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $sUserId, $adPlatform, $orderDesc, $category, $adFormat);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        $oMessage = 'Order placed successfully.';
+    } else {
+        $oMessage = 'Error placing order: ' . $stmt->error;
+    }
+
+    // Close the statement and the database connection
+    $stmt->close();
+    $conn->close();
+}
 ?>
+
+
+<!-- displaying message in a pop-up -->
+<script>
+    <?php if (isset($oMessage)) : ?>
+        window.addEventListener('DOMContentLoaded', function () {
+            var alertBox = document.createElement('div');
+            alertBox.classList.add('alert-box');
+            alertBox.textContent = "<?php echo $oMessage; ?>";
+            document.body.appendChild(alertBox);
+            setTimeout(function () {
+                alertBox.style.display = 'none';
+                window.location.href = "../../views/home.php";
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    <?php endif; ?>
+</script>
+
+<style>
+    .alert-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+</style>

@@ -1,46 +1,58 @@
 @import 'header.css';
 @import 'footer.css';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+/* @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'; */
 
 body {
     margin-top: 120px;
 }
 
+/* CSS styles for the edit-order form */
 .order-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .row {
-    width: 50%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 5px;
-  }
-  
-  button[type="submit"] {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Clear floats */
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.order-container .row {
+  margin-bottom: 15px;
+}
+
+.order-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.order-container input[type="text"],
+.order-container textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.order-container button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* CSS styles for the delete button */
+.delete-btn {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}

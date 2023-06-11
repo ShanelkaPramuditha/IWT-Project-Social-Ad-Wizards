@@ -106,17 +106,18 @@ $userId = $_SESSION['s_user_id'] ?? '0';
         <?php endif; ?>
 
     <!-- Search bar -->
-    <div class="search-notify">
-        <form method="GET" action="./src/views/search.php">
-            <input type="text" name="search" placeholder="Search..">
-            <button type="submit" class="image-submit-button">
-                <img src="./assets/images/site-img/icons/search.png" alt="Search">
-            </button>
-
-        </form>
-        </form>
-        <!-- <a href="#"><img src="./assets/images/site-img/icons/notify-animate.gif"></a> -->
-    </div>
+    <?php
+    if ((($userRole) === 'user') || ($userRole === 'visitor') || ($userRole === 'designer')): ?>
+        <div class="search-notify">
+            <form method="GET" action="./src/views/search.php">
+                <input type="text" name="search" placeholder="Search..">
+                <button type="submit" class="image-submit-button">
+                    <img src="./assets/images/site-img/icons/search.png" alt="Search">
+                </button>
+            </form>
+            <!-- <a href="#"><img src="./assets/images/site-img/icons/notify-animate.gif"></a> -->
+        </div>
+    <?php endif; ?>
 
 </header>
 

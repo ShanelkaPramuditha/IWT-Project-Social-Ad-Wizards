@@ -1,145 +1,52 @@
-/* body {
-    margin-top: 120px;
-} */
-
-#contact h1
-{
-    text-align: center;
-}
-/* 
-*
- {box-sizing: border-box;
-} */
-#contact body{
-    background-color: #1d7ee5;
-}
-
-#contact input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-#contact input[type=submit] {
-  background-color: #ffffff;
-    color: #080710;
-    padding: 12px 20px;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#contact input[type=submit]:hover {
-  background-color: #2f8aeb;
-  border: none;
-  
-}
 
 #contact .container {
-  
-    height: 550px;
-    width: 500px;
-    background-color: rgba(255,255,255,0.13);
-    /* position: relative; */
-    /* transform: translate(-50%,-50%);
-    top: 50%; */
-    /* left: 35%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px; */
-    font-family: 'Poppins',sans-serif;
-    color: rgb(9, 54, 94);
-
-
-}
-#contact .container h3{
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: left;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#contact label{
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 500;
-}
-#contact form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
-#contact .avatar {
-  vertical-align: middle;
-  width: 100px;
-  height: 100px;
-  border-radius: 10%;
-/* position: relative; */
-width: 354px;
-height: 306px;
-left: 800px;
-top: 156px;
-
-}
-
-#contact .social-icons {
-  list-style: none;
-  padding: 750px;
-  display: flex;
-  justify-content: center;
-}
-
-#contact .social-icons li {
-  margin: 0 10px;
-}
-
-#contact .social-icons a {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #14273c;
+#contact h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
   text-align: center;
-  line-height: 40px;
-  color: #ffffff;
-  font-size: 20px;
-  transition: background-color 0.3s ease;
-  top: 300px;
 }
 
-#contact .social-icons a:hover {
-  background-color: #68e08a;
-  color: #2f8aeb;
+#contact label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
-#contact .facebook {
-  background-color: #3b5998;
+#contact input,
+textarea {
+  width: 98%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
-#contact .instagram {
-  background-color: #c13584;
+#contact textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-#contact .linkedin {
-   background: #007bb5;
+#contact .contact-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-#contact .telegram {
-  background-color: #0088cc;
-}
-
-#contact .twitter {
-  background-color: #1da1f2;
+#contact .contact-button:hover {
+  background-color: #45a049;
 }

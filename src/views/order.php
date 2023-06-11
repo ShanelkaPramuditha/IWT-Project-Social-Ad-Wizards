@@ -1,12 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'user')) {
+    header('Location: ../home.php');
+    exit;
+}
+?>
+
 <!-- Import config file -->
 <?php
 require_once '../config/config.php';
-
-session_start();
-if (!isset ($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'user')) {
-    header('Location: ../views/home.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -16,40 +18,116 @@ if (!isset ($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'user')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo BASE_URL; ?>">
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
-    <title>Search Results</title>
-    <!-- Page styles --> 
-    <link rel="stylesheet" type="text/css" href="./src/css/search.css">
+    <title>Place Order</title>
+    <!-- Page styles -->
+    <link rel="stylesheet" type="text/css" href="./src/css/order.css">
+    <!-- JavaScript validation -->
+    <script>
+        function validateForm() {
+            var user = document.getElementById("s_user_id").value;
+            var platform = document.getElementById("ad_platform").value;
+            var description = document.getElementById("order_desc").value;
+            var category = document.getElementById("category").value;
+            var format = document.getElementById("ad_format").value;
+            var document = document.getElementById("document").value;
+
+            // Check if any field is empty
+            if (user === "" || platform === "" || description === "" || category === "" || format === "" || document === "") {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+
+            // Display confirmation dialog
+            var confirmation = confirm("Are you sure you want to place the order?");
+            return confirmation;
+        }
+    </script>
 </head>
 
 <body>
-    <!-- Open Navigation bar with PHP -->
+    <!-- open Navigation bar with PHP -->
     <?php include_once '../components/header.php'; ?>
 
-    <form action="./src/config/form/order-action.php" method="POST">
+    <div class="container">
+        <?php
+        include_once '../config/database/connection.php';
 
-  <label for="order_date">Order Date:</label>
-  <input type="date" name="order_date" id="order_date" required>
+        // Retrieve data for drop-down lists
+        $sql = "SELECT offer_id, offer_percentage FROM offer";
+        $offerResult = $conn->query($sql);
 
-  <label for="order_status">Order Status:</label>
-  <input type="text" name="order_status" id="order_status" required>
+        $sql = "SELECT s_user_id FROM registered_users";
+        $userResult = $conn->query($sql);
+        ?>
+        <center><h1>Place Order</h1></center>
+        <form method="POST" action="./src/config/form/order-action.php" onsubmit="return validateForm()">
+            <label for="ad_platform">Platform:</label>
+            <select name="ad_platform" id="ad_platform" required>
+                <option value="Facebook">Facebook</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Youtube">Youtube</option>
+                <!-- Add more options as needed -->
+            </select>
 
-  <label for="ad_platform">Ad Platform:</label>
-  <input type="text" name="ad_platform" id="ad_platform" required>
+            <label for="order_desc">Order Description:</label>
+            <textarea name="order_desc" id="order_desc" required></textarea>
 
-  <label for="order_desc">Order Description:</label>
-  <textarea name="order_desc" id="order_desc" rows="4" required></textarea>
+            <label for="category">Category:</label>
+            <select name="category" id="category" required>
+                <option value="Clothing">Clothing</option>
+                <option value="Electric Item">Electric Item</option>
+                <option value="Other">Other</option>
+                <!-- Add more options as needed -->
+            </select>
 
-  <label for="category">Category:</label>
-  <input type="text" name="category" id="category">
+            <label for="ad_format">Ad Format:</label>
+            <select name="ad_format" id="ad_format" required>
+                <option value="video">Video</option>
+                <option value="picture">Picture</option>
+                <!-- Add more options as needed -->
+            </select>
 
-  <label for="ad_format">Ad Format:</label>
-  <input type="text" name="ad_format" id="ad_format" required>
+            <!-- <label for="document">Document:</label>
+            <input type="file" name="document" id="document" required> -->
 
-  <button type="submit">Submit</button>
-</form>
+
+            <?php
+            //create price variable
+            $imagePrice = floatval(3000.00);
+            $videoPrice = floatval(5500.00);
+
+            // check the offers
+            $sql = "SELECT * FROM offer";
+            $result = $conn -> query($sql);
+
+            if ($result -> num_rows > 0) {
+                while ($row = $result -> fetch_assoc()) {
+                echo 'There is a ' . floatval($row['offer_percentage']) . '% offer.';
+                    // calculate the offer
+                    $videoPrice = $videoPrice - (($videoPrice) * ($row['offer_percentage'])) / 100;
+                    $imagePrice = $imagePrice - (($imagePrice) * ($row['offer_percentage'])) / 100;
+
+                echo '<h2>Price of the advertisement with the offer,</h2>
+                <p>Video ads : ' . $videoPrice . '</p>
+                <p>Picture ads: ' . $imagePrice . '</p>
+                </p>';
+                }
+                
+            }
+            else {
+            echo '<h2>Price of the advertisement,</h2>
+                <p>Video ads : ' . $videoPrice . '</p>
+                <p>Picture ads: ' . $imagePrice . '</p>
+                </p>';
+            }
+            ?>
+
+            <button type="submit">Insert Order</button>
+        </form>
+    </div>
 
     <!-- Footer with PHP -->
     <?php include_once '../components/footer.php'; ?>
-    
 </body>
 </html>

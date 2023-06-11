@@ -24,6 +24,7 @@ require_once '../../config/config.php';
 </head>
 
 <body>
+    <center><h1>Manage FAQ</h1></center>
     <!-- open Navigation bar with PHP -->
     <?php include_once '../../components/header.php'; ?>
 <!-- open Navigation bar with PHP -->
@@ -50,7 +51,8 @@ if ($result->num_rows > 0) {
             <td>' . $row["first_name"] . '</td>
             <td>' . $row["question"] . '</td>
             <td>' . $row["answer"] . '</td>
-            <td><a href="./src/views/manager/edit-faq.php?faq_id=' . $row['faq_id'] . '">Edit</a></td>
+            <td><a class="edit-button" href="./src/views/manager/edit-faq.php?faq_id=' . $row['faq_id'] . '">Edit</a></td>
+
             </tr>';
         
     }
@@ -59,9 +61,11 @@ if ($result->num_rows > 0) {
     echo "No data found.";
 }
 
-// Close the connection
-$conn->close();
 ?>
+
+<section id="contact">
+    <?php include ('./contact-messages.php'); ?>
+</section>
 
     <!-- Footer with PHP -->
     <?php include_once '../../components/footer.php'; ?>

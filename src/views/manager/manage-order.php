@@ -8,8 +8,8 @@ $result = mysqli_query($conn, $query);
 
 // Check if any orders are found
 if (mysqli_num_rows($result) > 0) {
-    // Output the order data
-    echo '<table>';
+    // dissply the order data
+    echo '<table class="order-table">';
     echo '<tr>';
     echo '<th>Order ID</th>';
     echo '<th>User ID</th>';
@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>' . $row['order_desc'] . '</td>';
         echo '<td>' . $row['category'] . '</td>';
         echo '<td>' . $row['ad_format'] . '</td>';
-        echo '<td><a href="./src/views/manager/edit-order.php?order_id=' . $row['order_id'] . '">Edit</a></td>'; // Edit button with order_id parameter
+        echo '<td><a class="edit-button" href="./src/views/manager/edit-order.php?order_id=' . $row['order_id'] . '">Edit</a></td>';
         echo '</tr>';
     }
 

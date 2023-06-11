@@ -13,3 +13,4 @@ function navigateAndScroll(event, sectionId) {
    window.location.href = 'home.php#home';
    scrollToSection(sectionId);
  }
+ 

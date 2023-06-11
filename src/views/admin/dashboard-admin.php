@@ -27,10 +27,10 @@ require_once '../../config/config.php';
     <!-- open Navigation bar with PHP -->
     <?php include_once '../../components/header.php'; ?>
 
-<a href="./src/views/admin/signup-staff.php">Add a New Staff Account</a>
+<a href="./src/views/admin/signup-staff.php" class="new-account-link">Add a New Staff Account</a>
 
 <div class="table-container">
-    <h1 class="center">Staff User Board</h1>
+    <center><h1 class="center">Staff User Board</h1></center>
     <table class="data-table">
         <tr>
             <th>Profile Picture</th>
@@ -73,8 +73,8 @@ require_once '../../config/config.php';
 </div>
 
 <div class="table-container">
-    <h1 class="center">Registered User Board</h1>
-    <a href=#>Export to excel</a>
+    <center><h1 class="center">Registered User Board</h1></center>
+    <!-- <a href=#>Export to excel</a> -->
     <table class="data-table">
         <tr>
             <th>Profile Picture</th>
@@ -98,7 +98,7 @@ require_once '../../config/config.php';
                     echo '<td><img src="' . $row["profile_picture"] . '" width="50" height="50"></td>';
                     echo "<td>" . $row["first_name"] . " " . $row["last_name"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
-                    echo '<td class="edit-btn"><a href="./edit-user.php?s_user_id=' . $row["s_user_id"] . '">Edit</a></td>';
+                    echo '<td class="edit-btn"><a href="./src/views/admin/edit-user.php?s_user_id=' . $row["s_user_id"] . '">Edit</a></td>';
                 echo "</tr>";
             }
         } else {

@@ -1,73 +1,48 @@
-#services *{
-    background-color:rgb(175, 211, 226); 
- }
-  .he{
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-  }
-#services div
-{
-text-align:center;
-  font-size: 10px;
-  padding: 10px;
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Service Container Styles */
+.service-container {
   display: flex;
-  align-items: center;
-  height: 100px;
-  font-size: 30px; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
 }
 
-#services .one
-{
-background-color:rgb(175, 211, 226);
-font-size:x-large;
-  padding: 50px;
+/* Service Card Styles */
+.service-card {
+  max-width: 400px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Title Styles */
+.service-title {
+  font-size: 24px;
+  color: #45474a;
+  margin-bottom: 10px;
+}
+
+/* Service Description Styles */
+.service-description {
+  font-size: 16px;
+  line-height: 1.5;
   margin-bottom: 20px;
-  border-radius: 50px;
-  width: 1300px;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
-#services .one img{
 
-width: 200px;
-height: 200px;
-border-radius: 50%;
-
-}
-#services .h２{
-text-align: center;
-}
-.two
-{
-align-items: center;
-background-color:rgb(175, 211, 226);
-font-size: x-large;
-  padding: 50px;
+/* Service Image Styles */
+.service-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
   margin-bottom: 20px;
-  border-radius: 50px;
-  width: 1300px;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-
-}
-#services .two img{
-width: 200px;
-height: 200px;
-border-radius: 70%;
-}
-#services .three
-{
-background-color: rgb(175, 211, 226);
-  font-size:x-large;  
- padding: 50px;
-  margin-bottom: 20px;
-  border-radius: 50px;
-  width: 1300px;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-}
-#services .three img{
-width: 200px;
-height: 200px;
-border-radius: 50%;
 }

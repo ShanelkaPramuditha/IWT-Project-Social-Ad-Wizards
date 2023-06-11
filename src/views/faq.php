@@ -55,7 +55,7 @@
     <!--form creation-->
     <form method="POST" action="./src/config/form/faq-action.php" class="faq">
     <center>Question :
-    <input type ="text" name="name"  placeholder="  Ask your Question...." size="100" class="input-box"></center>
+    <input type ="text" name="question"  placeholder="  Ask your Question...." size="100" class="input-box"></center>
     <br>
     <br>
     <center><input type="submit" class ="button"value="SEND"></center>
