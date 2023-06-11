@@ -65,7 +65,7 @@ $userRole = $_SESSION['user_role'] ?? 'visitor';
         <!-- Navigation Panel Buttons -->
         <nav class="navbar">
             <a href="./src/views/designer/dashboard-designer.php">DASHBOARD</a>
-            <a href="./src/views/designer/manage-gallery.php">GALLERY</a>
+            <a href="./src/views/gallery-more.php">GALLERY</a>
         </nav>
         <!-- Login image -->
         <!-- <div class="login-button">
@@ -123,7 +123,11 @@ $userRole = $_SESSION['user_role'] ?? 'visitor';
 // $currentPage = $_SERVER['PHP_SELF'];
 
 // page list of different path needed
-$pageNames = ['home.php'];
+$pageNames = [
+            'home.php',
+            'gallery-more.php',
+            'faq.php'
+            ];
 //[
 //     'dashboard-admin.php',
 //     'signup-staff.php',

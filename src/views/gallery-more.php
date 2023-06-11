@@ -17,21 +17,15 @@ require_once '../config/config.php';
 
 <body>
     <!-- open Navigation bar with PHP -->
-    <?php include_once '../components/header.php'; ?>
-
-        <!-- 
-        <?php
-        session_start();
-        if (isset($_SESSION['isLoggedIn']) && ($_SESSION['isLoggedIn'] === true) && ($_SESSION['user_role'] === 'user')) {
-            echo "<h1>Welcome, logged-in user!</h1>";
+    <?php include_once '../components/header.php';
+    // allow edit button for designers
+        if (($isLoggedIn) && ($userRole === 'designer')) {
+            echo '<div>
+                <a href="./src/views/designer/add.php">Add More</a>
+            </div>';
         }
-        ?> -->
 
-    <div>
-        <a href="./src/views/designer/add.php">Add More</a>
-    </div>
-
-
+        ?>
     <section id="gallery">
         <?php require_once './gallery.php'; ?>
     </section>

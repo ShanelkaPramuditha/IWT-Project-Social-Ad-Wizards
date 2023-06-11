@@ -1,12 +1,17 @@
 <!-- gallery.php -->
 
 <?php
-session_start();
+// session_start();
 // Include the database connection
 include '../config/database/connection.php';
 
-// Prepare the SQL query to retrieve the highest ranking first 9 images
-$query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review DESC LIMIT 9";
+// Prepare the SQL query to retrieve the highest ranking first 12 images
+if (strpos ($currentPage, 'home.php') !== FALSE) {
+    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review DESC LIMIT 12";
+}
+else {
+    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review";
+}
 $result = mysqli_query($conn, $query);
 
 // Check if any images are found
@@ -24,9 +29,12 @@ if (mysqli_num_rows($result) > 0) {
         echo '<img src="' . $g_link . '" alt="Image">';
         echo '</a>';
         echo '<div class="desc">' . $g_title . '</div>';
-        if ($_SESSION['user_role'] === 'designer') {
+        
+        // allow edit button for designers
+        if (($isLoggedIn) && ($userRole === 'designer')) {
             echo '<div class="edit-button"><a href="./src/views/designer/edit.php?id=' . $g_id . '">Edit</a></div>';
         }
+        
         echo '</div>';
         echo '</div>';
     }
@@ -39,5 +47,8 @@ if (mysqli_num_rows($result) > 0) {
 // Close the database connection
 mysqli_close($conn);
 ?>
-
-<button class="see-more-button"><a href="./src/views/gallery-more.php">See More</a></button>
+<?php
+if (strpos ($currentPage, 'home.php') !== FALSE) {
+    echo '<button class="see-more-button"><a href="./src/views/gallery-more.php">See More</a></button>';
+}
+?>
