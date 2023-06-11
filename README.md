@@ -1,5 +1,7 @@
 # Social-Ad-Wizards ( IWT Project 2023 March Batch Y1S2)
 
+# First open the config.php (src/config/config.php) and change the path.
+
 CRUD Info
 
 ## CRUD 01 :
@@ -51,3 +53,13 @@ CRUD Info
 ✔   U - If manager want to update the offer, manager can it.
 
 ✔   D - Manager can cancel the available offers with deletion.
+
+
+## User Name and Passwords
+
+user@gmail.com
+admin@gmail.com
+manager@gmail.com
+designer@gmail.com
+
+Password: 1234@Sha

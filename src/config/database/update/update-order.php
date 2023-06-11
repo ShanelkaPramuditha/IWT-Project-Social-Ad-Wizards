@@ -15,11 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $order_desc = $_POST['order_desc'];
     $category = $_POST['category'];
     $ad_format = $_POST['ad_format'];
+    $order_status = 'Approved';
 
     // Update the order in the database
-    $query = "UPDATE order_info SET s_user_id=?, order_date=?, order_status=?, ad_platform=?, order_desc=?, category=?, ad_format=? WHERE order_id=?";
+    $query = "UPDATE order_info SET order_date=?, order_status=?, ad_platform=?, order_desc=?, category=?, ad_format=? WHERE order_id=?";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "issssssi", $s_user_id, $order_date, $order_status, $ad_platform, $order_desc, $category, $ad_format, $order_id);
+    mysqli_stmt_bind_param($stmt, "ssssssi", $order_date, $order_status, $ad_platform, $order_desc, $category, $ad_format, $order_id);
     $result = mysqli_stmt_execute($stmt);
 
     // Check if the update was successful

@@ -18,11 +18,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $category = $_POST['category'];
     $adFormat = $_POST['ad_format'];
 
+    if ($adFormat === 'video') {
+        //create price variable
+        $videoPrice = floatval(5500.00);
+
+        // check the offers
+        $sql = "SELECT * FROM offer";
+        $result = $conn -> query($sql);
+
+        if ($result -> num_rows > 0) {
+            while ($row = $result -> fetch_assoc()) {
+                $offer = floatval($row['offer_percentage']);
+                // calculate the order value
+                $orderValue = $videoPrice - (($videoPrice) * $offer) / 100; 
+            }
+        }
+    }
+    elseif ($adFormat === 'picture') {
+        //create price variable
+        $picturePrice = floatval(3000.00);
+
+        // check the offers
+        $sql = "SELECT * FROM offer";
+        $result = $conn -> query($sql);
+
+        if ($result -> num_rows > 0) {
+            while ($row = $result -> fetch_assoc()) {
+                $offer = floatval($row['offer_percentage']);
+                // calculate the order value
+                $orderValue = $picturePrice - (($picturePrice) * $offer) / 100; 
+            }
+        }
+    }
+
     // Prepare the SQL statement
-    $sql = "INSERT INTO order_info (s_user_id, ad_platform, order_desc, category, ad_format) 
-            VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO order_info (s_user_id, ad_platform, order_desc, category, ad_format, order_value) 
+            VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $sUserId, $adPlatform, $orderDesc, $category, $adFormat);
+    $stmt->bind_param("ssssss", $sUserId, $adPlatform, $orderDesc, $category, $adFormat, $orderValue);
 
     // Execute the statement
     if ($stmt->execute()) {

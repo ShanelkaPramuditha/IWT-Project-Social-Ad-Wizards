@@ -3,10 +3,10 @@
 include '../../config/database/connection.php';
 
 // Retrieve data from the order_info table
-$query = "SELECT * FROM order_info WHERE order_status = 'Pending'";
+$query = "SELECT * FROM order_info WHERE order_status = 'Completed'";
 $result = mysqli_query($conn, $query);
 
-echo '<center><h1>Pending Orders</h1></center>';
+echo '<hr><center><h1>Completed Orders</h1></center>';
 
 // Check if any orders are found
 if (mysqli_num_rows($result) > 0) {
@@ -20,8 +20,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '<th>Ad Platform</th>';
     echo '<th>Order Description</th>';
     echo '<th>Category</th>';
-    echo '<th>Ad Format</th>';
-    echo '<th>Action</th>'; // New column for Edit button
+    echo '<th>Order Value</th>';
     echo '</tr>';
 
     while ($row = mysqli_fetch_assoc($result)) {
@@ -33,9 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>' . $row['ad_platform'] . '</td>';
         echo '<td>' . $row['order_desc'] . '</td>';
         echo '<td>' . $row['category'] . '</td>';
-        echo '<td>' . $row['ad_format'] . '</td>';
-        echo '<td><a class="edit-button" href="./src/views/manager/edit-order.php?order_id=' . $row['order_id'] . '">Edit</a></td>';
-        echo '</tr>';
+        echo '<td>' . $row['order_value'] . '</td>';
     }
 
     echo '</table>';

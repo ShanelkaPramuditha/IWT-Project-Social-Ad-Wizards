@@ -33,7 +33,7 @@ require_once '../config/config.php';
                 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
                     // User is logged in
                     echo '<a href="./src/views/order.php"><button class="hire-us-btn">PLACE ORDER...</button></a>';
-                    echo '<a href="./src/views/my-orders.php"><button class="hire-us-btn">MY ORDERS</button></a>';
+                    echo '<a href="./src/views/my-order.php"><button class="hire-us-btn">MY ORDERS</button></a>';
                 } else {
                     // User is not logged in
                     echo '<button class="hire-us-btn openPopup">PLACE ORDER...</button>';

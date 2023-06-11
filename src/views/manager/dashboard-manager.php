@@ -27,12 +27,12 @@ require_once '../../config/config.php';
     <!-- open Navigation bar with PHP -->
     <?php include_once '../../components/header.php'; ?>
 
-<div>
-    <h1>Manager Dashboard</h1>
-</div>
-
 <section class="manage-order">
     <?php include ('./manage-order.php'); ?>
+</section>
+
+<section class="manage-order">
+    <?php include ('./completed-order.php'); ?>
 </section>
 
     <!-- Footer with PHP -->

@@ -3,10 +3,8 @@
 include '../../config/database/connection.php';
 
 // Retrieve data from the order_info table
-$query = "SELECT * FROM order_info WHERE order_status = 'Pending'";
+$query = "SELECT * FROM order_info WHERE order_status = 'Approved'";
 $result = mysqli_query($conn, $query);
-
-echo '<center><h1>Pending Orders</h1></center>';
 
 // Check if any orders are found
 if (mysqli_num_rows($result) > 0) {
@@ -34,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<td>' . $row['order_desc'] . '</td>';
         echo '<td>' . $row['category'] . '</td>';
         echo '<td>' . $row['ad_format'] . '</td>';
-        echo '<td><a class="edit-button" href="./src/views/manager/edit-order.php?order_id=' . $row['order_id'] . '">Edit</a></td>';
+        echo '<td><a class="edit-button" href="./src/views/designer/edit-order.php?order_id=' . $row['order_id'] . '">Edit</a></td>';
         echo '</tr>';
     }
 

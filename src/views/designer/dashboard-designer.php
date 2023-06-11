@@ -20,13 +20,16 @@ require_once '../../config/config.php';
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Designer Dashboard</title>
     <!-- Page styles --> 
-    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-admin.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/dashboard-manager.css">
 </head>
 
 <body>
     <!-- open Navigation bar with PHP -->
     <?php include_once '../../components/header.php'; ?>
 
+    <section class="manage-order">
+    <?php include ('./manage-order.php'); ?>
+    </section>
 
     <!-- Footer with PHP -->
     <?php include_once '../../components/footer.php'; ?>

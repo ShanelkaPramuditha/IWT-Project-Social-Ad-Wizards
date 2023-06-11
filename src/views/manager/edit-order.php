@@ -54,7 +54,7 @@ require_once '../../config/config.php';
             $ad_platform = $row['ad_platform'];
             $order_desc = $row['order_desc'];
             $category = $row['category'];
-            $row['ad_format'] = 'Approved';
+            $ad_format = $row['ad_format'];
 
             // Display the edit form
             echo '

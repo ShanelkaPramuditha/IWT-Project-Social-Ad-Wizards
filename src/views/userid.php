@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 
 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true) {
@@ -11,4 +11,4 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true) {
     echo "User is not logged in.";
 }
 
-?>
+?> -->
