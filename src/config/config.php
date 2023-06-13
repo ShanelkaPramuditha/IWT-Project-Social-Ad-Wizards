@@ -9,6 +9,6 @@ Path Variable define for above path:
   $base_path = '/myproject/Social-Ad-Wizards/'; -->
 
 <?php
-$base_path = '/myproject/Social-Ad-Wizards/';
+$base_path = '/Social-Ad-Wizards/';
 define ('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . $base_path);
 ?>
