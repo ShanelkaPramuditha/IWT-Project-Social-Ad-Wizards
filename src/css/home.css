@@ -46,7 +46,7 @@ section {
 }
 
 #home .main-container .hire-us-btn {
-    display: flex;
+    /* display: flex; */
     width: 200px;
     padding: 10px 20px;
     background-color: #53606e;
