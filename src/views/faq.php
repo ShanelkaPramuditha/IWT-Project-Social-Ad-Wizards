@@ -11,6 +11,23 @@
     <title>Manager Dashboard</title>
     <!-- Page styles --> 
     <link rel="stylesheet" type="text/css" href="./src/css/faq.css">
+    <!-- JavaScript validation -->
+    <script>
+        function validateForm() {
+            var question = document.getElementsByName("question")[0].value;
+            var errorElement = document.getElementById("error-message");
+
+            // Check if the question is empty
+            if (question.trim() === "") {
+                errorElement.textContent = "Please enter your question.";
+                return false;
+            } else {
+                errorElement.textContent = "";
+            }
+
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -46,27 +63,25 @@
     $conn->close();
     ?>
 
-
-<?php
-    if (($isLoggedIn === TRUE) && ($userRole === 'user')): ?>
-
+<?php if (($isLoggedIn === TRUE) && ($userRole === 'user')): ?>
     <div class="al">
-
-    <!--form creation-->
-    <form method="POST" action="./src/config/form/faq-action.php" class="faq">
-    <center>Question :
-    <input type ="text" name="question"  placeholder="  Ask your Question...." size="100" class="input-box"></center>
-    <br>
-    <br>
-    <center><input type="submit" class ="button"value="SEND"></center>
-
-
-    </form>
-        </div>
+        <!-- Form creation -->
+        <form method="POST" action="./src/config/form/faq-action.php" class="faq" onsubmit="return validateForm()">
+            <center>
+                Question:
+                <input type="text" name="question" placeholder="Ask your Question...." size="100" class="input-box">
+                <span id="error-message" style="color: red;"></span>
+            </center>
+            <br>
+            <br>
+            <center>
+                <input type="submit" class="button" value="SEND">
+            </center>
+        </form>
     </div>
+<?php endif; ?>
 
-    <?php endif; ?>
-    <!-- Footer bar with PHP -->
-    <?php include_once '../components/footer.php' ?>
+<!-- Footer bar with PHP -->
+<?php include_once '../components/footer.php' ?>
 </body>
 </html>

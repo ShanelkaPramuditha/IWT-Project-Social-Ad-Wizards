@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset ($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'manager')) {
+if (!isset($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'manager')) {
     header('Location: ../home.php');
     exit;
 }
@@ -19,8 +19,24 @@ require_once '../../config/config.php';
     <base href="<?php echo BASE_URL; ?>">
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Manage Offer</title>
-    <!-- Page styles --> 
+    <!-- Page styles -->
     <link rel="stylesheet" type="text/css" href="./src/css/offer-manage.css">
+    <!-- JavaScript validation -->
+    <script>
+        function validateForm() {
+            var offerPercentage = document.getElementsByName("offer_percentage")[0].value;
+            var errorElement = document.getElementById("error-message");
+
+            // Check if the offer percentage is a valid float
+            if (!/^\d+(\.\d+)?$/.test(offerPercentage)) {
+                errorElement.textContent = "Please enter a valid offer percentage.";
+                return false;
+            }
+
+            errorElement.textContent = ""; // Clear any previous error message
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -29,17 +45,18 @@ require_once '../../config/config.php';
 
     <center><h2>Import Offer Data</h2></center>
     <hr>
-    <form method="POST" action="./src/config/form/offer-manage-action.php">
+    <form method="POST" action="./src/config/form/offer-manage-action.php" onsubmit="return validateForm()">
 
         <label for="offer_percentage">Offer Percentage:</label>
         <input type="text" name="offer_percentage" required><br>
+        <span id="error-message" style="color: red;"></span> <!-- Error message display element -->
 
         <!-- <label for="o_end_date">End Date:</label>
         <input type="date" name="o_end_date"><br> -->
 
         <input type="submit" value="Submit">
     </form>
-    
+
 
     <center><h2>Manage Offers</h2></center>
     <hr>
@@ -92,6 +109,6 @@ require_once '../../config/config.php';
 
     <!-- Footer with PHP -->
     <?php include_once '../../components/footer.php'; ?>
-    
+
 </body>
 </html>
