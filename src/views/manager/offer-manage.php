@@ -73,7 +73,7 @@ require_once '../../config/config.php';
                     echo "<td>$o_start_date</td>";
                     // echo "<td>$o_end_date</td>";
                     echo "<td>";
-                    echo "<a class='edit-link' href='edit-offer.php?id=$offer_id'>Edit</a> | ";
+                    echo "<a class='edit-link' href='./src/views/manager/edit-offer.php?id=$offer_id'>Edit</a>";
                     echo "<a class='delete-link' href='./src/config/database/delete/delete-offer.php?id=$offer_id'>Delete</a>";
 
                     echo "</td>";

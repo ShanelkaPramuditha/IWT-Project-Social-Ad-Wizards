@@ -1,4 +1,12 @@
-<!-- edit.php -->
+<!-- Import config file -->
+<?php
+require_once '../../config/config.php';
+?>
+
+<base href="<?php echo BASE_URL; ?>">
+
+<!-- Header with PHP -->
+<?php include_once '../../components/header.php'; ?>
 
 <?php
 // Include the database connection
@@ -59,3 +67,9 @@ if (isset($_GET['id'])) {
 // Close the database connection
 mysqli_close($conn);
 ?>
+
+<!-- Footer with PHP -->
+<?php include_once '../../components/footer.php'; ?>
+
+<!-- Import external CSS -->
+<link rel="stylesheet" type="text/css" href="./src/css/edit.css">
