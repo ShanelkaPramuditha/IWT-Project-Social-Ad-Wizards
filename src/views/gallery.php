@@ -1,5 +1,4 @@
 <!-- gallery.php -->
-
 <?php
 // session_start();
 // Include the database connection
@@ -7,10 +6,10 @@ include '../config/database/connection.php';
 
 // Prepare the SQL query to retrieve the highest ranking first 12 images
 if (strpos ($currentPage, 'home.php') !== FALSE) {
-    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review DESC LIMIT 12";
+    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_id DESC LIMIT 12";
 }
 else {
-    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_review";
+    $query = "SELECT g_id, g_link, g_title FROM gallery ORDER BY g_id";
 }
 $result = mysqli_query($conn, $query);
 
@@ -45,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 // Close the database connection
-mysqli_close($conn);
+$conn -> close();
 ?>
 <?php
 if (strpos ($currentPage, 'home.php') !== FALSE) {

@@ -1,0 +1,16 @@
+- assets
+
+- src
+-- components
+-- config
+-- css
+-- js
+-- views
+--- admin
+--- designer
+--- manager
+--- about.php (checked)
+--- contact.php (checked)
+--- edit-profile.php
+
+- index.php

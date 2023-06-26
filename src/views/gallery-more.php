@@ -12,7 +12,7 @@ require_once '../config/config.php';
     <link rel="icon" href="./assets/images/site-img/favicon/favicon.ico">
     <title>Gallery</title>
     <!-- Page styles --> 
-    <link rel="stylesheet" type="text/css" href="./src/css/home.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/gallery-more.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ require_once '../config/config.php';
     // allow edit button for designers
         if (($isLoggedIn) && ($userRole === 'designer')) {
             echo '<div>
-                <a href="./src/views/designer/add.php">Add More</a>
+                <a href="./src/views/designer/add.php" class="g-add-more">Add More</a>
             </div>';
         }
 

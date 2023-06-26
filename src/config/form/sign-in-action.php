@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Connect to the database
     include '../../config/database/connection.php';
 
-    $sql = "SELECT s_user_id, email, user_pass, user_role FROM registered_users WHERE email = ? LIMIT 1";
+    $sql = "SELECT s_user_id, email, user_pass, user_role, first_name, profile_picture FROM registered_users WHERE email = ? LIMIT 1";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $email);
     $stmt->execute();

@@ -7,7 +7,7 @@ if (!isset($_SESSION['isLoggedIn']) || ($_SESSION['user_role'] !== 'user')) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Import config file
-    require_once '../../config/config.php';
+    // require_once '../../config/config.php';
     // Import database connection
     require_once '../../config/database/connection.php';
 
@@ -20,85 +20,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($adFormat === 'video') {
         //create price variable
-        $videoPrice = floatval(5500.00);
-
-        // check the offers
-        $sql = "SELECT * FROM offer";
-        $result = $conn -> query($sql);
-
-        if ($result -> num_rows > 0) {
-            while ($row = $result -> fetch_assoc()) {
-                $offer = floatval($row['offer_percentage']);
-                // calculate the order value
-                $orderValue = $videoPrice - (($videoPrice) * $offer) / 100; 
-            }
-        }
+        $orderValue = floatval(5500.00);
     }
     elseif ($adFormat === 'picture') {
         //create price variable
-        $picturePrice = floatval(3000.00);
+        $orderValue = floatval(3000.00);
+    }
 
-        // check the offers
-        $sql = "SELECT * FROM offer";
-        $result = $conn -> query($sql);
+    // check the offers
+    $sql = "SELECT * FROM offer";
+    $result = $conn -> query($sql);
 
-        if ($result -> num_rows > 0) {
-            while ($row = $result -> fetch_assoc()) {
-                $offer = floatval($row['offer_percentage']);
-                // calculate the order value
-                $orderValue = $picturePrice - (($picturePrice) * $offer) / 100; 
-            }
+    if ($result -> num_rows > 0) {
+        while ($row = $result -> fetch_assoc()) {
+            $offer = floatval($row['offer_percentage']);
+            // calculate the order value
+            $orderValue = $orderValue - (($orderValue) * $offer) / 100; 
         }
     }
 
-    // Prepare the SQL statement
-    $sql = "INSERT INTO order_info (s_user_id, ad_platform, order_desc, category, ad_format, order_value) 
-            VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssss", $sUserId, $adPlatform, $orderDesc, $category, $adFormat, $orderValue);
+    // Insert the data into the database
+    $sql = "INSERT INTO order_info (s_user_id, ad_platform, order_desc, category, ad_format, order_value)
+            VALUES ('$sUserId', '$adPlatform', '$orderDesc', '$category', '$adFormat', $orderValue)";
 
     // Execute the statement
-    if ($stmt->execute()) {
+    if ($conn -> query($sql) === TRUE) {
         $oMessage = 'Order placed successfully.';
     } else {
-        $oMessage = 'Error placing order: ' . $stmt->error;
+        $oMessage = 'Error placing order: ' . $conn -> error;
     }
 
     // Close the statement and the database connection
-    $stmt->close();
-    $conn->close();
+    $conn -> close();
+
+    // Import config file
+    require_once '../config.php';
 }
 ?>
 
-
-<!-- displaying message in a pop-up -->
-<script>
-    <?php if (isset($oMessage)) : ?>
-        window.addEventListener('DOMContentLoaded', function () {
-            var alertBox = document.createElement('div');
-            alertBox.classList.add('alert-box');
-            alertBox.textContent = "<?php echo $oMessage; ?>";
-            document.body.appendChild(alertBox);
-            setTimeout(function () {
-                alertBox.style.display = 'none';
-                window.location.href = "../../views/home.php";
-            }, 3000); // 3000 milliseconds = 3 seconds
-        });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="stylesheet" href="./src/css/alert-box.css">
+</head>
+<body>
+    <!-- displaying message in a pop-up -->
+    <?php
+    echo "<script>
+        var oMessage = '$oMessage';
+    </script>";
+    if (isset($oMessage)) : ?>
+        <script src="./src/js/alert-box.js"></script>
     <?php endif; ?>
-</script>
-
-<style>
-    .alert-box {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: transparent;
-        border: 1px solid #ccc;
-        padding: 20px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        font-size: 16px;
-        font-weight: bold;
-    }
-</style>
+</body>
+</html>

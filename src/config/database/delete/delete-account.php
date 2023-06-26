@@ -4,7 +4,7 @@ session_start();
 // Check if the user is logged in
 if (!isset($_SESSION['isLoggedIn'])) {
     // Redirect to the login page or show an appropriate message
-    header('Location: ../../../views/login.php');
+    header('Location: ../../../views/home.php');
     exit;
 }
 
@@ -24,7 +24,7 @@ mysqli_stmt_execute($stmt);
 if (mysqli_affected_rows($conn) > 0) {
     // Logout the user and redirect to the login page or show a success message
     session_destroy();
-    header('Location: login.php');
+    header('Location: ../../../views/home.php');
     exit;
 } else {
     // Show an error message if the account and profile deletion failed
@@ -32,5 +32,5 @@ if (mysqli_affected_rows($conn) > 0) {
 }
 
 // Close the database connection
-mysqli_close($conn);
+$conn -> close();
 ?>

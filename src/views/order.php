@@ -112,8 +112,7 @@ require_once '../config/config.php';
                 <p>Video ads : ' . $videoPrice . '</p>
                 <p>Picture ads: ' . $imagePrice . '</p>
                 </p>';
-                }
-                
+                }   
             }
             else {
             echo '<h2>Price of the advertisement,</h2>
