@@ -121,6 +121,7 @@ mysqli_close($conn);
         // Check if an image is selected
         if (image.trim() === "") {
             imageErrorElement.textContent = "Please select a new image.";
+            imageErrorElement.classList.add("error-red");
             return false;
         }
 

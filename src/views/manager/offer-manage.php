@@ -33,7 +33,7 @@ require_once '../../config/config.php';
                 return false;
             }
 
-            errorElement.textContent = ""; // Clear any previous error message
+            errorElement.textContent = ""; // Its for clear the previous error message
             return true;
         }
     </script>
