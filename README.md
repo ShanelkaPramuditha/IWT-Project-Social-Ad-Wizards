@@ -58,8 +58,12 @@ CRUD Info
 ## User Name and Passwords (Default in above sql query)
 
 user@mail.com
+
 admin@mail.com
+
 manager@mail.com
+
 designer@mail.com
+
 
 Password: 1234@Sha
