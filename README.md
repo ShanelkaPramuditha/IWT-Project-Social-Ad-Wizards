@@ -40,9 +40,9 @@ CRUD Info
 
 ✔   R - Views received orders.
 
-✖   U - Update order info before the pass the designer.
+✔   U - Update order info before the pass the designer.
 
-✖   D - Cancellation of the order if the customer requests to cancel the order.
+✔   D - Cancellation of the order if the customer requests to cancel the order.
 
 ## CRUD 05 :
 
@@ -55,11 +55,15 @@ CRUD Info
 ✔   D - Manager can cancel the available offers with deletion.
 
 
-## User Name and Passwords
+## User Name and Passwords (Default in above sql query)
 
-user@gmail.com
-admin@gmail.com
-manager@gmail.com
-designer@gmail.com
+user@mail.com
+
+admin@mail.com
+
+manager@mail.com
+
+designer@mail.com
+
 
 Password: 1234@Sha
