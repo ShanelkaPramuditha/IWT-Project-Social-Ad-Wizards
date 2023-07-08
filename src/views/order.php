@@ -37,6 +37,12 @@ require_once '../config/config.php';
                 return false;
             }
 
+            // Check if description is at least 10 characters long
+            if (description.length < 10) {
+                alert("Order description should be at least 10 characters long.");
+                return false;
+            }
+
             // Display confirmation dialog
             var confirmation = confirm("Are you sure you want to place the order?");
             return confirmation;
@@ -63,6 +69,7 @@ require_once '../config/config.php';
         <form method="POST" action="./src/config/form/order-action.php" onsubmit="return validateForm()">
             <label for="ad_platform">Platform:</label>
             <select name="ad_platform" id="ad_platform" required>
+                <option></option>
                 <option value="Facebook">Facebook</option>
                 <option value="Twitter">Twitter</option>
                 <option value="Instagram">Instagram</option>
@@ -75,6 +82,7 @@ require_once '../config/config.php';
 
             <label for="category">Category:</label>
             <select name="category" id="category" required>
+                <option></option>
                 <option value="Clothing">Clothing</option>
                 <option value="Electric Item">Electric Item</option>
                 <option value="Other">Other</option>
@@ -83,6 +91,7 @@ require_once '../config/config.php';
 
             <label for="ad_format">Ad Format:</label>
             <select name="ad_format" id="ad_format" required>
+                <option></option>
                 <option value="video">Video</option>
                 <option value="picture">Picture</option>
                 <!-- Add more options as needed -->
@@ -112,8 +121,7 @@ require_once '../config/config.php';
                 <p>Video ads : ' . $videoPrice . '</p>
                 <p>Picture ads: ' . $imagePrice . '</p>
                 </p>';
-                }
-                
+                }   
             }
             else {
             echo '<h2>Price of the advertisement,</h2>

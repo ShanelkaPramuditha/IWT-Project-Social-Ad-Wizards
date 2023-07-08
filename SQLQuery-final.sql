@@ -1,39 +1,9 @@
-/* CREATE TABLES */
-
--- Database Name : social_ad_wizads
-
--- Create Registered user table
-CREATE TABLE `social_ad_wizards`.`registered_users` (
-	`s_user_id` INT NOT NULL AUTO_INCREMENT ,
-	`registered_date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-	`profile_picture` VARCHAR(500) DEFAULT 'uploads/profile-pictures/default.jpg',
-	`user_pass` VARCHAR(30) NOT NULL ,
-	`email` VARCHAR(100) NOT NULL ,
-	`gender` VARCHAR(6) NOT NULL ,
-	`date_of_birth` DATE NOT NULL ,
-	`first_name` VARCHAR(20) NOT NULL ,
-	`last_name` VARCHAR(20) NOT NULL ,
-	`phone_no` VARCHAR(10) NOT NULL ,
-	`user_role` VARCHAR(10) NOT NULL ,
-	PRIMARY KEY (`s_user_id`)) ENGINE = InnoDB;
-
-
-INSERT INTO `registered_users` (`profile_picture`, `user_pass`, `email`, `gender`, `date_of_birth`, `first_name`, `last_name`, `phone_no`, `user_role`)
-VALUES
-	(DEFAULT, 'admin', 'admin@gmail.com', 'Male', '2000-05-01', 'Ftest', 'Ltest', '0771237653', 'admin'),
-	('uploads/profile-pictures/user2.jpg', 'designer', 'designer@gmail.com', 'Female', '2001-06-12', 'John', 'Doe', '0771234567', 'designer'),
-	('uploads/profile-pictures/user3.jpg', 'user', 'user@gmail.com', 'Male', '1998-09-21', 'Jane', 'Smith', '0779876543', 'user'),
-	(DEFAULT, 'manager', 'manager@gmail.com', 'Female', '1995-03-15', 'Michael', 'Johnson', '0777654321', 'manager'),
-	('uploads/profile-pictures/user4.jpg', 'test5@123', 'testuser5@gmail.com', 'Male', '2002-11-07', 'Emily', 'Anderson', '0771112222', 'user'),
-	(DEFAULT, 'test6@123', 'testuser6@gmail.com', 'Female', '1997-08-25', 'David', 'Wilson', '0773334444', 'user'),
-	(DEFAULT, 'test7@123', 'testuser7@gmail.com', 'Male', '2000-02-17', 'Sophia', 'Taylor', '0775556666', 'user');
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2023 at 01:05 PM
+-- Generation Time: Jun 26, 2023 at 03:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -54,6 +24,64 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact_messages`
+--
+
+CREATE TABLE `contact_messages` (
+  `id` int(11) NOT NULL,
+  `c_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `c_message` varchar(3000) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact_messages`
+--
+
+INSERT INTO `contact_messages` (`id`, `c_name`, `email`, `c_message`, `created_at`) VALUES
+(8, 'test', 'shanelka@gmail.com', 'I want to create an add.', '2023-06-25 21:57:38'),
+(9, 'test', 'shanelka@gmail.com', 'I want to create an add.', '2023-06-25 22:00:15'),
+(10, 'ggg', 'gggg@gmail.com', 'ggg', '2023-06-25 22:00:48'),
+(11, 'dff', 'designer@gmail.com', 'fdgdg', '2023-06-25 22:01:43'),
+(12, 'ssf', 'sss@gmail.com', 'dfdfd', '2023-06-25 22:03:53'),
+(13, 'ssf', 'sss@gmail.com', 'dfdfd', '2023-06-25 22:09:59'),
+(14, 'hn', 'gggg@gmail.com', 'fff', '2023-06-25 22:10:12'),
+(15, 'Shanelka Pramuditha', 'shanelka@gmail.com', 'I want more details.', '2023-06-25 23:10:27'),
+(16, 'Shanelka 2', 'shanelka@gmail.com', 'I want to more details.', '2023-06-25 23:10:54'),
+(17, 'Shanelka', 'test@gmail.com', 'fdfdd', '2023-06-25 23:48:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `faq_id` int(11) NOT NULL,
+  `s_user_id` int(11) NOT NULL,
+  `question` varchar(1000) NOT NULL,
+  `answer` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`faq_id`, `s_user_id`, `question`, `answer`) VALUES
+(10, 4, 'How much time is needed for ad design?', ''),
+(13, 4, 'Why should I choose Social Ad Wizard', ''),
+(14, 4, 'Can I make changes to an order I already placed', ''),
+(15, 4, 'How do I get a new password', ''),
+(16, 4, 'When will I receive my product', ''),
+(17, 4, 'How can I pay for the product', 'You can pay with card'),
+(100, 2, 'How much time is needed for ad design?', 'At least 3 days'),
+(111, 2, 'Why should I choose Social Ad Wizard', 'Because Social Ad Wizard is a very trustfull and very user friendly compamy. So Customers can satisfied about the final product definitly'),
+(112, 2, 'Can I make changes to an order I already placed', 'No. You cannot make changes After place a order');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gallery`
 --
 
@@ -70,14 +98,111 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`g_id`, `g_title`, `g_link`, `g_review`, `s_user_id`) VALUES
-(6, 'Item 4', './assets/images/uploads/gallery/gallery4.jpg', 0, 4),
-(7, 'Item 5', './assets/images/uploads/gallery/gallery5.jpg', 0, 4),
-(8, 'Item 6', './assets/images/uploads/gallery/gallery6.jpg', 0, 4),
-(16, 'ddd', './assets/images/uploads/gallery/6482fdc3e050e_pexels-laraine-davis-1580025(1).jpg', 0, NULL);
+(29, 'Sample 1', './assets/images/uploads/gallery/649898734f807_Black White Elegant Hijab Fashion Product Sale Facebook Post.png', 0, NULL),
+(30, 'Sample 2', './assets/images/uploads/gallery/64989888d24a3_White Simple Creative Quote Facebook Post.png', 0, NULL),
+(31, 'Sample 3', './assets/images/uploads/gallery/649898959ea7c_Blue White Simple Special Offer Facebook Post.png', 0, NULL),
+(32, 'Sample 4', './assets/images/uploads/gallery/6498989f75142_Creative Blue Fashion Special Offer (Facebook Post).png', 0, NULL),
+(33, 'Sample 5', './assets/images/uploads/gallery/649898ace2bd7_Grey & Red Modern Gym Ads Facebook Post.png', 0, NULL),
+(34, 'Sample 6', './assets/images/uploads/gallery/649898bb2a51c_brand new arrival ads facebook.png', 0, NULL),
+(35, 'Sample 7', './assets/images/uploads/gallery/649898cda418d_Grey & Red Modern Gym Ads Facebook Post.png', 0, NULL),
+(36, 'Sample 8', './assets/images/uploads/gallery/649898d94c41d_Creative Blue Fashion Special Offer (Facebook Post).png', 0, NULL),
+(37, 'Sample 9', './assets/images/uploads/gallery/649898e58ff2f_White Simple Creative Quote Facebook Post.png', 0, NULL),
+(38, 'Sample 10', './assets/images/uploads/gallery/649898fa8ff3b_Black White Elegant Hijab Fashion Product Sale Facebook Post.png', 0, NULL),
+(39, 'Sample 11', './assets/images/uploads/gallery/649899085f3e4_White Simple Creative Quote Facebook Post.png', 0, NULL),
+(40, 'Sample 12', './assets/images/uploads/gallery/64989913bd8e7_Blue White Simple Special Offer Facebook Post.png', 0, NULL),
+(41, 'Sample 13', './assets/images/uploads/gallery/649899244270c_Grey & Red Modern Gym Ads Facebook Post.png', 0, NULL),
+(42, 'Sample 14', './assets/images/uploads/gallery/64989930aa93a_Blue White Simple Special Offer Facebook Post.png', 0, NULL),
+(43, 'Sample 15', './assets/images/uploads/gallery/6498993f20e7c_brand new arrival ads facebook.png', 0, NULL),
+(44, 'Sample 16', './assets/images/uploads/gallery/64989947b9167_Blue White Simple Special Offer Facebook Post.png', 0, NULL),
+(45, 'Sample 17', './assets/images/uploads/gallery/64989953f2d8f_brand new arrival ads facebook.png', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `offer`
+--
+
+CREATE TABLE `offer` (
+  `offer_id` int(11) NOT NULL,
+  `offer_percentage` float(5,2) NOT NULL,
+  `o_start_date` date NOT NULL DEFAULT current_timestamp(),
+  `o_end_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `offer`
+--
+
+INSERT INTO `offer` (`offer_id`, `offer_percentage`, `o_start_date`, `o_end_date`) VALUES
+(24, 20.00, '2023-06-26', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_info`
+--
+
+CREATE TABLE `order_info` (
+  `order_id` int(11) NOT NULL,
+  `s_user_id` int(11) NOT NULL,
+  `order_date` date NOT NULL DEFAULT current_timestamp(),
+  `order_status` varchar(10) NOT NULL DEFAULT 'Pending',
+  `ad_platform` varchar(10) NOT NULL,
+  `order_desc` varchar(2000) NOT NULL,
+  `category` varchar(30) DEFAULT NULL,
+  `ad_format` varchar(5) NOT NULL,
+  `documents` varchar(500) DEFAULT NULL,
+  `offer_id` int(11) DEFAULT NULL,
+  `order_value` float NOT NULL,
+  `released_link` varchar(500) DEFAULT NULL,
+  `released_date` date DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registered_users`
+--
+
+CREATE TABLE `registered_users` (
+  `s_user_id` int(11) NOT NULL,
+  `registered_date` date NOT NULL DEFAULT current_timestamp(),
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_no` varchar(10) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `profile_picture` varchar(500) DEFAULT 'assets/images/uploads/profile-pictures/default.jpg',
+  `user_pass` varchar(300) NOT NULL,
+  `user_role` varchar(10) NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `registered_users`
+--
+
+INSERT INTO `registered_users` (`s_user_id`, `registered_date`, `first_name`, `last_name`, `email`, `phone_no`, `date_of_birth`, `gender`, `profile_picture`, `user_pass`, `user_role`) VALUES
+(1, '2023-06-11', 'Luvi', 'Dias', 'admin@mail.com', '0773456789', '1994-09-01', 'female', 'assets/images/uploads/profile-pictures/default.jpg', '$2y$10$AGHT/JhfvLw5Bwtg8TzF8.YxD0uwepGj9bfUOHOB4IZj8m5r27mei', 'admin'),
+(2, '2023-06-11', 'Olivia', 'Carter', 'manager@mail.com', '0783456789', '1996-09-01', 'male', 'assets/images/uploads/profile-pictures/default.jpg', '$2y$10$aQiIRRQyFIi/TYJcteQHwOMjUHXpzHAL1.buEBqMBVQgYDmxPT/H.', 'manager'),
+(3, '2023-06-11', 'Don', 'Brook', 'designer@mail.com', '0713456789', '1998-09-01', 'male', 'assets/images/uploads/profile-pictures/default.jpg', '$2y$10$VicNJHMgAzVtwOEmwa04LuREYIaBerlEtPG8IAR7grFWjqY8kc33e', 'designer'),
+(34, '2023-06-26', 'Don', 'David', 'user@mail.com', '0771234567', '2000-04-26', 'male', 'assets/images/uploads/profile-pictures/user1.jpg', '$2y$10$GSNGnEWJE6h9dSWpezY5P.NRqiI39fn44Bzbo8M1EHAaK8aDA4MQS', 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact_messages`
+--
+ALTER TABLE `contact_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`faq_id`);
 
 --
 -- Indexes for table `gallery`
@@ -87,14 +212,64 @@ ALTER TABLE `gallery`
   ADD KEY `fk_gallery` (`s_user_id`);
 
 --
+-- Indexes for table `offer`
+--
+ALTER TABLE `offer`
+  ADD PRIMARY KEY (`offer_id`);
+
+--
+-- Indexes for table `order_info`
+--
+ALTER TABLE `order_info`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `order_info_fk2` (`offer_id`),
+  ADD KEY `order_info_fk1` (`s_user_id`);
+
+--
+-- Indexes for table `registered_users`
+--
+ALTER TABLE `registered_users`
+  ADD PRIMARY KEY (`s_user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `contact_messages`
+--
+ALTER TABLE `contact_messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `faq_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `offer`
+--
+ALTER TABLE `offer`
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `order_info`
+--
+ALTER TABLE `order_info`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+
+--
+-- AUTO_INCREMENT for table `registered_users`
+--
+ALTER TABLE `registered_users`
+  MODIFY `s_user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Constraints for dumped tables
@@ -105,255 +280,15 @@ ALTER TABLE `gallery`
 --
 ALTER TABLE `gallery`
   ADD CONSTRAINT `fk_gallery` FOREIGN KEY (`s_user_id`) REFERENCES `registered_users` (`s_user_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `order_info`
+--
+ALTER TABLE `order_info`
+  ADD CONSTRAINT `order_info_fk1` FOREIGN KEY (`s_user_id`) REFERENCES `registered_users` (`s_user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `order_info_fk2` FOREIGN KEY (`offer_id`) REFERENCES `offer` (`offer_id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
--- create faq data table
-CREATE TABLE `social_ad_wizards`.`faq` (
-    `faq_id` INT NOT NULL AUTO_INCREMENT,
-    `s_user_id` INT NOT NULL,
-    `question` VARCHAR(1000) NOT NULL,
-    `answer` VARCHAR(1000) DEFAULT NULL,
-    PRIMARY KEY (`faq_id`)
-) ENGINE = InnoDB;
-
-
-
-
-
-
--- -- Create FAQ table
--- CREATE TABLE FAQ (
--- 	FAQ_ID int IDENTITY(1,1),
--- 	Manager_ID int NOT NULL,
--- 	Question varchar(1000) NOT NULL,
--- 	Answer varchar(1000),
--- 	CONSTRAINT FAQ_PK PRIMARY KEY(FAQ_ID),
--- 	CONSTRAINT FAQ_FK1 FOREIGN KEY(Manager_ID) REFERENCES Manager(Manager_ID),
--- );
-
--- CREATE TABLE Registered_User (
--- 	S_User_ID int IDENTITY(1,1),
--- 	Registerd_Date Date NOT NULL DEFAULT GETDATE(),
--- 	Profile_Picture varchar(100),
--- 	User_Pass varchar(30) NOT NULL,
--- 	Email varchar(100) CHECK (Email LIKE '%@%.%' AND Email NOT LIKE '%@%@%') NOT NULL,
--- 	Gender varchar(6) NOT NULL,
--- 	Date_Of_Birth Date NOT NULL,
--- 	First_Name varchar(20) NOT NULL,
--- 	Last_Name varchar(20) NOT NULL,
--- 	Phone_No varchar(10) NOT NULL,
--- 	User_Role varchar(10) NOT NULL,
--- 	CONSTRAINT Registered_User_PK PRIMARY KEY(S_USER_ID),
--- );
-
--- -- Create Order info table
--- CREATE TABLE Order_Info (
--- 	Order_ID int IDENTITY(1,1),
--- 	S_User_ID int NOT NULL,
--- 	Order_Date Date NOT NULL DEFAULT GETDATE(),
--- 	Order_Status varchar(50) NOT NULL,
--- 	Ad_Platform varchar(50) NOT NULL,
--- 	Order_Desc varchar(3000) NOT NULL,
--- 	Category varchar(50) NOT NULL,
--- 	Ad_Format varchar(20) NOT NULL,
--- 	CONSTRAINT Order_Info_PK PRIMARY KEY(Order_ID),
--- 	CONSTRAINT Order_Info_FK1 FOREIGN KEY(S_User_ID) REFERENCES Registered_User(S_User_ID)
--- );
-
--- -- Create Document table
--- CREATE TABLE Document (
--- 	Document_ID int IDENTITY(1,1),
--- 	Order_ID int NOT NULL,
--- 	Document_Type varchar(100) NOT NULL,
--- 	CONSTRAINT Document_PK PRIMARY KEY(Document_ID),
--- 	CONSTRAINT Document_FK1 FOREIGN KEY(Order_ID) REFERENCES Order_Info(Order_ID)
--- );
-
--- -- Create Manager table
--- CREATE TABLE Manager (
--- 	Manager_ID int IDENTITY(1,1),
--- 	S_User_ID int NOT NULL,
--- 	Bio_Data varchar(1000),
--- 	CONSTRAINT Manager_PK PRIMARY KEY(Manager_ID),
--- 	CONSTRAINT Manager_FK1 FOREIGN KEY(S_User_ID) REFERENCES Registered_User(S_User_ID)
--- );
-
--- -- Create Offer table
--- CREATE TABLE Offer (
--- 	Offer_ID int IDENTITY(1,1),
--- 	Manager_ID int NOT NULL,
--- 	Offer_Percentage float NOT NULL,
--- 	O_Start_Date Date NOT NULL DEFAULT GETDATE(),
--- 	End_Date Date,
--- 	CONSTRAINT Offer_PK PRIMARY KEY(Offer_ID),
--- 	CONSTRAINT Offer_FK1 FOREIGN KEY(Manager_ID) REFERENCES Manager(Manager_ID)
--- );
-
--- -- Create Payment table
--- CREATE TABLE Payment (
--- 	Payment_ID int IDENTITY(1,1),
--- 	Order_ID int NOT NULL,
--- 	Offer_ID int,
--- 	Payment_Amount float NOT NULL,
--- 	Payment_Date Date NOT NULL DEFAULT GETDATE(),
--- 	CONSTRAINT Payment_PK PRIMARY KEY(Payment_ID),
--- 	CONSTRAINT Payment_FK1 FOREIGN KEY(Order_ID) REFERENCES Order_Info(Order_ID),
--- 	CONSTRAINT Payment_FK2 FOREIGN KEY(Offer_ID) REFERENCES Offer(Offer_ID)
--- );
-
--- -- Create Designer table
--- CREATE TABLE Designer (
--- 	Designer_ID int IDENTITY(1,1),
--- 	Bio_Data varchar(1000) DEFAULT 'No data',
--- 	Experience varchar(1000) DEFAULT 'No data',
--- 	CONSTRAINT Designer_PK PRIMARY KEY(Designer_ID),
--- );
-
--- -- Create Sample gallery table
--- CREATE TABLE Sample_Gallery (
--- 	Item_ID int IDENTITY(1,1),
--- 	Designer_ID int NOT NULL,
--- 	Review int DEFAULT 0,
--- 	Document varchar(100) NOT NULL,
--- 	Title varchar(50) NOT NULL,
--- 	CONSTRAINT Sample_Gallery_PK PRIMARY KEY(Item_ID),
--- 	CONSTRAINT Sample_Gallery_FK1 FOREIGN KEY(Designer_ID) REFERENCES Designer(Designer_ID)
--- );
-
--- -- Create Design table
--- CREATE TABLE Design (
--- 	Design_ID int IDENTITY(1,1),
--- 	Order_ID int NOT NULL,
--- 	Design_Content varchar(100) NOT NULL,
--- 	CONSTRAINT Design_PK PRIMARY KEY(Design_ID),
--- 	CONSTRAINT Design_FK2 FOREIGN KEY(Order_ID) REFERENCES Order_Info(Order_ID),
--- );
-
--- -- Create Release table
--- CREATE TABLE Release (
--- 	Designer_ID int NOT NULL,
--- 	Design_ID int NOT NULL,
--- 	Released_Date Date NOT NULL DEFAULT GETDATE(),
--- 	CONSTRAINT Release_PK PRIMARY KEY(Designer_ID, Design_ID),
--- 	CONSTRAINT Release_FK1 FOREIGN KEY(Designer_ID) REFERENCES Designer(Designer_ID),
--- 	CONSTRAINT Release_FK2 FOREIGN KEY(Design_ID) REFERENCES Design(Design_ID)
--- );
-
--- -- Create FAQ table
--- CREATE TABLE FAQ (
--- 	FAQ_ID int IDENTITY(1,1),
--- 	Manager_ID int NOT NULL,
--- 	Question varchar(1000) NOT NULL,
--- 	Answer varchar(1000),
--- 	CONSTRAINT FAQ_PK PRIMARY KEY(FAQ_ID),
--- 	CONSTRAINT FAQ_FK1 FOREIGN KEY(Manager_ID) REFERENCES Manager(Manager_ID),
--- );
-
-
-
--- /* Insert Data */
-
--- -- Insert data into Registered_User table
--- INSERT INTO Registered_User (Profile_Picture, User_Pass, Email, Gender, Date_Of_Birth, First_Name, Last_Name, Phone_No, User_Role)
--- VALUES 
---     ('www.link.com/profile1.jpg', 'userpass1', 'john@gmail.com', 'Male', '2000-01-01', 'John', 'Doe', '0771234567', 'Designer'),
---     ('www.link.com/profile2.jpg', 'pass123', 'smith@yahoo.com', 'Female', '1998-01-02', 'Jane', 'Smith', '0719723453', 'Manager'),
---     ('www.link.com/profile3.jpg', 'Michael123', 'johnson123@gmail.com', 'Male', '1999-05-03', 'Michael', 'Johnson', '0745723453', 'User'),
---     ('www.link.com/profile4.jpg', 'davis@345', 'emily@gmail.com', 'Female', '2000-01-04', 'Emily', 'Davis', '0719729863', 'User'),
---     ('www.link.com/profile5.jpg', 'man543', 'david@gmail.com', 'Male', '2000-11-05', 'David', 'Anderson', '0719635453', 'User');
-
-
--- -- Insert data into Order_Info table
--- INSERT INTO Order_Info (S_User_ID, Order_Status, Ad_Platform, Order_Desc, Category, Ad_Format)
--- VALUES
---     (1, 'Completed', 'Facebook', 'Ad campaign for product launch', 'Marketing', 'Picture'),
---     (2, 'Completed', 'Facebook', 'Ad campaign for summer sale', 'Promotions', 'Picture'),
---     (3, 'Pending Approval', 'Instagram', 'Ad campaign for new collection', 'Fashion', 'Video'),
---     (3, 'Approved', 'YouTube', 'Ad campaign for video promotion', 'Entertainment', 'Picture'),
---     (5, 'Pending Approval', 'LinkedIn', 'Ad campaign for professional services', 'Business', 'Picture');
-	
--- -- Insert data into Document table
--- INSERT INTO Document (Order_ID, Document_Type)
--- VALUES
---     (1, 'www.link.com/doc1.jpg'),
---     (2, 'www.link.com/doc2.png'),
---     (3, 'www.link.com/doc3.mp4'),
---     (4, 'www.link.com/doc4.png'),
---     (5, 'www.link.com/doc5.png');
-
--- -- Insert data into Manager table
--- INSERT INTO Manager (S_User_ID, Bio_Data)
--- VALUES
---     (1, 'Experienced manager with a proven track record.'),
---     (2, 'Passionate about leadership and team development.'),
---     (3, 'Skilled in strategic planning and problem-solving.'),
---     (4, 'Excellent communication and interpersonal skills.'),
---     (5, 'Strong organizational and decision-making abilities.');
-
--- -- Insert data into Offer table
--- INSERT INTO Offer (Manager_ID, Offer_Percentage, End_Date)
--- VALUES
---     (1, 15.5, '2023-06-30'),
---     (2, 12.75, '2023-07-15'),
---     (2, 20.0, '2023-06-25'),
---     (3, 18.25, '2023-07-10'),
---     (5, 14.0, '2023-07-05');
-
--- -- Insert data into Payment table
--- INSERT INTO Payment (Order_ID, Offer_ID, Payment_Amount)
--- VALUES
---     (1, 1, 10000.0),
---     (2, 2, 7500.5),
---     (3, NULL, 5000.0),
---     (4, 3, 12000.25),
---     (5, 4, 9000.75);
-
--- -- Insert data into Designer table
--- INSERT INTO Designer (Bio_Data, Experience)
--- VALUES
---     ('5 years of experience', 'Adobe Photoshop, Illustrator, InDesign'),
---     ('3 years of experience', 'Sketch, Figma, Adobe XD'),
---     ('10 years of experience', 'AutoCAD, 3ds Max, SolidWorks'),
---     ('2 years of experience', 'HTML, CSS, JavaScript'),
---     ('7 years of experience', 'UI/UX design, Wireframing, Prototyping');
-
--- -- Insert data into Sample_Gallery table
--- INSERT INTO Sample_Gallery (Designer_ID, Review, Document, Title)
--- VALUES
---     (1, 4, 'www.link.com/sample1.img', 'Fashion'),
---     (2, 3, 'www.link.com/sample2.mp4', 'Pet Care'),
---     (3, 3, 'www.link.com/sample3.img', 'Medical'),
---     (5, 2, 'www.link.com/sample4.mp4', 'Channeling'),
---     (5, 1, 'www.link.com/sample5.img', 'Fashion');
-
--- /* Insert data into Design table */
--- INSERT INTO Design (Order_ID, Design_Content)
--- VALUES 
---     (1, 'Design content 1'),
---     (2, 'Design content 2'),
---     (3, 'Design content 3'),
---     (4, 'Design content 4'),
---     (5, 'Design content 5');
-
--- /* Insert data into Release table */
--- INSERT INTO Release (Designer_ID, Design_ID, Released_Date)
--- VALUES 
---     (1, 1, '2023-05-01'),
---     (2, 2, '2023-04-02'),
---     (2, 3, '2023-03-23'),
---     (4, 4, '2023-01-04'),
---     (5, 5, '2023-02-15');
-
--- /* Insert data into FAQ table */
--- INSERT INTO FAQ (Manager_ID, Question, Answer)
--- VALUES 
---     (1, 'How do I place an order?', 'You can place an order by visiting our website and following the instructions provided.'),
---     (1, 'What payment methods do you accept?', 'We accept credit cards, PayPal, and bank transfers as payment methods.'),
---     (2, 'Can I cancel my order?', 'Yes, you can cancel your order within 24 hours of placing it.'),
---     (2, 'How long does shipping take?', 'Shipping typically takes 3-5 business days, depending on your location.'),
---     (3, 'Do you offer international shipping?', 'Yes, we offer international shipping to select countries. Please contact our customer support for more information.');

@@ -11,6 +11,11 @@ $isLoggedIn = $_SESSION['isLoggedIn'] ?? FALSE;
 $userRole = $_SESSION['user_role'] ?? 'visitor';
 // get user id
 $userId = $_SESSION['s_user_id'] ?? '0';
+// Get user name
+$userName = $_SESSION['first_name'] ?? 'Guest';
+// get profile picture
+$profilePicture = $_SESSION['profile_picture'] ?? './assets/images/site-img/login.png';
+
 ?>
 
 <!-- Header Navigation Panel -->
@@ -22,12 +27,18 @@ $userId = $_SESSION['s_user_id'] ?? '0';
     <!-- Log In and Log Out Buttons -->
     <?php if ($isLoggedIn): ?>
         <div class="login-button">
-            <a class="logOut" href="./src/config/log-out.php">LOG OUT</a>
-            <a class="editProfile" href="./src/views/profile.php"><img src="./assets/images/site-img/login.png" alt="ADMIN"></a>
+            <div class="login-text">
+                <a class="userName" href="./src/config/log-out.php"><?php echo $userName ?></a><br>
+                <a class="logOut" href="./src/config/log-out.php">LOG OUT</a>
+            </div>
+            <a class="editProfile" href="./src/views/profile.php"><img src="<?php echo $profilePicture ?>" alt="<?php echo $userName ?>"></a>
         </div>
     <?php else: ?>
         <div class="login-button">
-            <a class="openPopup">SIGN IN</a>
+            <div class="login-text">
+                <a class="openPopup"><?php echo $userName ?></a><br>
+                <a class="openPopup">SIGN IN</a>
+            </div>
             <a class="openPopup"><img src="./assets/images/site-img/login.png" alt="ADMIN"></a>
         </div>
     <?php endif; ?>

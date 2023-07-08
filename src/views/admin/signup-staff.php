@@ -114,17 +114,17 @@ if (isset($_SESSION['admin'])) {
             ?>
             <div class="form-row">
                 <div class="input_field">
-                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <!-- <span><i class="fa fa-user" aria-hidden="true"></i></span> -->
                     <label for="fname">First Name</label>
                     <input type="text" name="fname" placeholder="First Name" required>
                 </div>
                 <div class="input_field">
-                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <!-- <span><i class="fa fa-user" aria-hidden="true"></i></span> -->
                     <label for="lname">Last Name</label>
                     <input type="text" name="lname" placeholder="Last Name" required>
                 </div>
                 <div class="input_field">
-                    <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                    <!-- <span><i aria-hidden="true" class="fa fa-envelope"></i></span> -->
                     <label for="email">E-mail</label><br>
                     <input type="email" name="email" placeholder="E-mail" required>
                 </div>
@@ -145,12 +145,12 @@ if (isset($_SESSION['admin'])) {
                     </select><br>
                 </div>
                 <div class="input_field">
-                    <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
+                    <!-- <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span> -->
                     <label for="password">Password</label><br>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="input_field">
-                    <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span>
+                    <!-- <span><i aria-hidden="true" class="fa fa-lock"></i><ion-icon name="lock-closed"></ion-icon></span> -->
                     <label for="confirm_password">Confirm Password</label><br>
                     <input type="password" name="confirm_password" placeholder="Re-type Password" required>
                 </div>

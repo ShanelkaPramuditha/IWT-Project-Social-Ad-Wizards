@@ -50,17 +50,23 @@
     align-items: center;
 }
 
-.login-button a {
-    margin-left: 8px;
+.login-text a {
+    margin-left: 10px;
     color: #ffffff;
     text-decoration: none;
 }
 
+.login-text a .userName {
+    font-size: 20px;
+}
+
 .login-button img {
+    border-radius: 50%;
     width: 65px;
     height: 65px;
     vertical-align: middle;
     margin-right: 0px;
+    
 }
 
 .navbar {

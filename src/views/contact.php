@@ -8,8 +8,8 @@
     <label for="email">Email</label>
     <input type="email" id="email" name="email" placeholder="Email.." required>
 
-    <label for="subject">Message</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px" required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:100px" required></textarea>
 
     <button class="contact-button" type="submit">Submit</button>
   </div>
