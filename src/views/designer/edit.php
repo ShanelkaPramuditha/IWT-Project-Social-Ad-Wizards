@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
             </form>
 
             <!-- Delete button -->
-            <form action="delete.php" method="post">
+            <form action="./src/views/designer/delete.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $g_id; ?>">
                 <button type="submit">Delete</button>
             </form>
